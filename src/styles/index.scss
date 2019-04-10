@@ -1,0 +1,76 @@
+@import 'bulma/bulma';
+// @import 'bulma-extensions/extensions';
+
+
+// 1. Import the initial variables
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+// // 2. Setup your Custom Colors
+$vtov-blue: #276cda;
+$vtov-blue-invert: #fff;
+// $purple-invert: findColorInvert($purple);
+// 3. Set the derived variables
+// Use the new blue as the primary color
+// $primary: $vtov-blue;
+// $primary-invert: $vtov-blue-invert;
+// // 3. Add new color variables to the color map.
+// @import "bulma/sass/utilities/derived-variables.sass";
+$addColors: (
+  "vtov-blue":($vtov-blue, $vtov-blue-invert),
+);
+$colors: map-merge($colors, $addColors);
+
+
+
+@import 'bulma/bulma';
+// @import 'bulma-extensions/extensions';
+
+
+.pvMediaBox:hover {
+  transition: box-shadow .3s;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  cursor: pointer;
+}
+
+.infiniteList:focus {
+  outline: 0;
+}
+
+// .pv-controls .edit-button {
+//     display: none;
+// }
+// .pv-controls:hover .edit-button {
+//     display: inline;
+// }
+
+.hover-hand:hover {
+  cursor: pointer;
+}
+
+.tag-button-success {
+  border: 1px solid $success;
+}
+
+.tag-button-success:hover {
+  background-color: $success !important;
+  color: $white !important;
+}
+
+.tag-button-danger {
+  border: 1px solid $danger;
+}
+
+.tag-button-danger:hover {
+  background-color: $danger !important;
+  color: $white !important;
+}
+
+.task_row.complete {
+  font-style: italic;
+  color: $success;
+}
+
+.task_title.complete {
+  font-style: italic;
+  text-decoration: line-through; 
+}
