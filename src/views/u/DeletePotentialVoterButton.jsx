@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { Mutation } from 'react-apollo';
+import React, { Component } from "react";
+import { Mutation } from "react-apollo";
 // import ASSOCIATE_PV_VOTER from '../../data/mutations/associatePvWithVoter';
-import MY_POTENTIAL_VOTERS from '../../data/queries/potentialVoters';
-import UPDATE_PV from '../../data/mutations/modifyPV';
-import { withRouter } from 'react-router-dom';
-import ReactRouterPropTypes from 'react-router-prop-types';
-import PropTypes from 'prop-types';
-import { filter } from 'lodash';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faExclamation } from '@fortawesome/fontawesome-pro-solid';
+import MY_POTENTIAL_VOTERS from "../../data/queries/potentialVoters";
+import UPDATE_PV from "../../data/mutations/modifyPV";
+import { withRouter } from "react-router-dom";
+import ReactRouterPropTypes from "react-router-prop-types";
+import PropTypes from "prop-types";
+import { filter } from "lodash";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { faExclamation } from "@fortawesome/fontawesome-free-solid";
 
 export class DeletePotentialVoterButton extends Component {
   render() {
@@ -19,7 +19,7 @@ export class DeletePotentialVoterButton extends Component {
         update={(store, { data: { updatePotentialVoter } }) => {
           const data = store.readQuery({
             query: MY_POTENTIAL_VOTERS,
-            variables: { limit: 25, org_id: this.props.match.params.orgSlug },
+            variables: { limit: 25, org_id: this.props.match.params.orgSlug }
           });
 
           // remove item from cache
@@ -31,14 +31,16 @@ export class DeletePotentialVoterButton extends Component {
           store.writeQuery({
             query: MY_POTENTIAL_VOTERS,
             variables: { limit: 25, org_id: this.props.match.params.orgSlug },
-            data,
+            data
           });
         }}
       >
         {updatePotentialVoter => (
           <button
             className="button is-danger"
-            onClick={() => updatePotentialVoter().then(() => this.props.close_modal())}
+            onClick={() =>
+              updatePotentialVoter().then(() => this.props.close_modal())
+            }
           >
             <span className="icon">
               <FontAwesomeIcon icon={faExclamation} />
@@ -54,7 +56,7 @@ export class DeletePotentialVoterButton extends Component {
 DeletePotentialVoterButton.propTypes = {
   match: ReactRouterPropTypes.match.isRequired,
   pv_id: PropTypes.string.isRequired,
-  close_modal: PropTypes.func.isRequired,
+  close_modal: PropTypes.func.isRequired
 };
 
 export default withRouter(DeletePotentialVoterButton);

@@ -1,17 +1,30 @@
-import React, { PureComponent } from 'react';
-import classnames from 'classnames';
-import InputFeedback from './InputFeedback';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faExclamationTriangle, faCheck } from '@fortawesome/fontawesome-pro-solid';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from "react";
+import classnames from "classnames";
+import InputFeedback from "./InputFeedback";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import {
+  faExclamationTriangle,
+  faCheck
+} from "@fortawesome/fontawesome-free-solid";
+import PropTypes from "prop-types";
 
 class TextInput extends PureComponent {
   render() {
-    const { type, id, label, error, value, onChange, className, touched, ...props } = this.props;
+    const {
+      type,
+      id,
+      label,
+      error,
+      value,
+      onChange,
+      className,
+      touched,
+      ...props
+    } = this.props;
     const classes = classnames(
-      'input',
+      "input",
       {
-        'is-danger': !!error,
+        "is-danger": !!error
       },
       className
     );
@@ -52,7 +65,7 @@ TextInput.propTypes = {
   value: PropTypes.any,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
-  touched: PropTypes.bool,
+  touched: PropTypes.bool
 };
 
 export default TextInput;

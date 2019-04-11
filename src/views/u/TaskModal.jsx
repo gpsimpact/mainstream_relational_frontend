@@ -9,8 +9,8 @@ import { getUserEmail } from "../../utils/auth";
 import { withRouter } from "react-router-dom";
 import ReactRouterPropTypes from "react-router-prop-types";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/fontawesome-pro-solid";
-import { faSquare, faCheckSquare } from "@fortawesome/fontawesome-pro-light";
+import { faThumbsUp } from "@fortawesome/fontawesome-free-solid";
+import { faSquare, faCheckSquare } from "@fortawesome/fontawesome-free-solid";
 import { sortBy, filter } from "lodash";
 
 class TaskModal extends PureComponent {

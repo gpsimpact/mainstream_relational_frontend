@@ -1,8 +1,12 @@
-import React, { PureComponent } from 'react';
-import { faExclamation, faEdit, faTrashAlt } from '@fortawesome/fontawesome-pro-solid';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React, { PureComponent } from "react";
+import {
+  faExclamation,
+  faEdit,
+  faTrashAlt
+} from "@fortawesome/fontawesome-free-solid";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
 class PvListRow extends PureComponent {
   render() {
@@ -13,7 +17,10 @@ class PvListRow extends PureComponent {
           <div className="level-left">
             {content.voterFileRecord.state_file_id ? null : (
               <div className="level-item edit-button">
-                <a className="button is-danger is-outlined" onClick={this.props.openPvEditModal}>
+                <a
+                  className="button is-danger is-outlined"
+                  onClick={this.props.openPvEditModal}
+                >
                   <span className="icon is-small">
                     <FontAwesomeIcon icon={faEdit} />
                   </span>
@@ -21,7 +28,10 @@ class PvListRow extends PureComponent {
               </div>
             )}
             <div className="level-item edit-button">
-              <a className="button is-danger is-outlined" onClick={this.props.openDeleteModal}>
+              <a
+                className="button is-danger is-outlined"
+                onClick={this.props.openDeleteModal}
+              >
                 <span className="icon is-small">
                   <FontAwesomeIcon icon={faTrashAlt} />
                 </span>
@@ -31,12 +41,15 @@ class PvListRow extends PureComponent {
               {content.voterFileRecord.state_file_id ? (
                 <div className="content">
                   <strong>
-                    {content.voterFileRecord.first_name} {content.voterFileRecord.last_name}
+                    {content.voterFileRecord.first_name}{" "}
+                    {content.voterFileRecord.last_name}
                   </strong>
                   <br />
                   <small>
-                    {content.voterFileRecord.home_address} - {content.voterFileRecord.city},{' '}
-                    {content.voterFileRecord.state} {content.voterFileRecord.zipcode}
+                    {content.voterFileRecord.home_address} -{" "}
+                    {content.voterFileRecord.city},{" "}
+                    {content.voterFileRecord.state}{" "}
+                    {content.voterFileRecord.zipcode}
                   </small>
                 </div>
               ) : (
@@ -75,40 +88,56 @@ class PvListRow extends PureComponent {
                       onClick={this.props.openVoteByMailModal}
                     >
                       <span
-                        className={classNames('tag', 'is-white', {
-                          'tag-button-danger':
-                            content.voterFileRecord.vo_ab_requested_primary === false,
-                          'tag-button-success':
-                            content.voterFileRecord.vo_ab_requested_primary === true,
+                        className={classNames("tag", "is-white", {
+                          "tag-button-danger":
+                            content.voterFileRecord.vo_ab_requested_primary ===
+                            false,
+                          "tag-button-success":
+                            content.voterFileRecord.vo_ab_requested_primary ===
+                            true
                         })}
                       >
-                        <abbr title="Has this contact registered to vote by mail?">VBM?</abbr>
+                        <abbr title="Has this contact registered to vote by mail?">
+                          VBM?
+                        </abbr>
                       </span>
                       <span
-                        className={classNames('tag', {
-                          'is-danger': content.voterFileRecord.vo_ab_requested_primary === false,
-                          'is-success': content.voterFileRecord.vo_ab_requested_primary === true,
+                        className={classNames("tag", {
+                          "is-danger":
+                            content.voterFileRecord.vo_ab_requested_primary ===
+                            false,
+                          "is-success":
+                            content.voterFileRecord.vo_ab_requested_primary ===
+                            true
                         })}
                       >
-                        {content.voterFileRecord.vo_ab_requested_primary ? 'Yes' : 'No'}
+                        {content.voterFileRecord.vo_ab_requested_primary
+                          ? "Yes"
+                          : "No"}
                       </span>
                     </div>
                   </div>
 
                   <div className="control">
-                    <div className="tags has-addons hover-hand" onClick={this.props.openTaskModal}>
+                    <div
+                      className="tags has-addons hover-hand"
+                      onClick={this.props.openTaskModal}
+                    >
                       <span
-                        className={classNames('tag', 'is-white', {
-                          'tag-button-danger': content.countAvailableTasks > 0,
-                          'tag-button-success': content.countAvailableTasks === 0,
+                        className={classNames("tag", "is-white", {
+                          "tag-button-danger": content.countAvailableTasks > 0,
+                          "tag-button-success":
+                            content.countAvailableTasks === 0
                         })}
                       >
-                        <abbr title="The count of available tasks for that contact.">TODO:</abbr>
+                        <abbr title="The count of available tasks for that contact.">
+                          TODO:
+                        </abbr>
                       </span>
                       <span
-                        className={classNames('tag', {
-                          'is-danger': content.countAvailableTasks > 0,
-                          'is-success': content.countAvailableTasks === 0,
+                        className={classNames("tag", {
+                          "is-danger": content.countAvailableTasks > 0,
+                          "is-success": content.countAvailableTasks === 0
                         })}
                       >
                         {content.countAvailableTasks}
@@ -117,11 +146,16 @@ class PvListRow extends PureComponent {
                   </div>
 
                   <div className="control">
-                    <div className="tags has-addons hover-hand" onClick={this.props.openVotedModal}>
+                    <div
+                      className="tags has-addons hover-hand"
+                      onClick={this.props.openVotedModal}
+                    >
                       <span
-                        className={classNames('tag', 'is-white', {
-                          'tag-button-danger': content.voterFileRecord.vo_voted_primary === false,
-                          'tag-button-success': content.voterFileRecord.vo_voted_primary === true,
+                        className={classNames("tag", "is-white", {
+                          "tag-button-danger":
+                            content.voterFileRecord.vo_voted_primary === false,
+                          "tag-button-success":
+                            content.voterFileRecord.vo_voted_primary === true
                         })}
                       >
                         <abbr title="Has this contact cast a ballot in the Nov. 2018 primary election?">
@@ -129,12 +163,16 @@ class PvListRow extends PureComponent {
                         </abbr>
                       </span>
                       <span
-                        className={classNames('tag', {
-                          'is-danger': content.voterFileRecord.vo_voted_primary === false,
-                          'is-success': content.voterFileRecord.vo_voted_primary === true,
+                        className={classNames("tag", {
+                          "is-danger":
+                            content.voterFileRecord.vo_voted_primary === false,
+                          "is-success":
+                            content.voterFileRecord.vo_voted_primary === true
                         })}
                       >
-                        {content.voterFileRecord.vo_voted_primary ? 'Yes' : 'No'}
+                        {content.voterFileRecord.vo_voted_primary
+                          ? "Yes"
+                          : "No"}
                       </span>
                     </div>
                   </div>
@@ -145,10 +183,13 @@ class PvListRow extends PureComponent {
           ) : (
             <div className="level-right">
               <div className="level-item">
-                <a className="button is-small is-danger" onClick={this.props.openVoterSearchModal}>
+                <a
+                  className="button is-small is-danger"
+                  onClick={this.props.openVoterSearchModal}
+                >
                   <span className="icon is-small">
                     <FontAwesomeIcon icon={faExclamation} />
-                  </span>{' '}
+                  </span>{" "}
                   <span>Match to voter record</span>
                 </a>
               </div>
@@ -169,7 +210,7 @@ PvListRow.propTypes = {
   openVotedModal: PropTypes.func.isRequired,
   openTaskModal: PropTypes.func.isRequired,
   openPvEditModal: PropTypes.func.isRequired,
-  openDeleteModal: PropTypes.func.isRequired,
+  openDeleteModal: PropTypes.func.isRequired
 };
 
 export default PvListRow;
