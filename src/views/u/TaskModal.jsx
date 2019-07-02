@@ -8,9 +8,9 @@ import POINTS_PROFILE_USER_ORG_LIMITED from "../../data/queries/pointsProfileUse
 import { getUserEmail } from "../../utils/auth";
 import { withRouter } from "react-router-dom";
 import ReactRouterPropTypes from "react-router-prop-types";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/fontawesome-free-solid";
-import { faSquare, faCheckSquare } from "@fortawesome/fontawesome-free-solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/fontawesome-free";
+import { faSquare, faCheckSquare } from "@fortawesome/fontawesome-free";
 import { sortBy, filter } from "lodash";
 
 class TaskModal extends PureComponent {

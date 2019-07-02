@@ -7,8 +7,8 @@ import { withRouter } from "react-router-dom";
 import ReactRouterPropTypes from "react-router-prop-types";
 import PropTypes from "prop-types";
 import { filter } from "lodash";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import { faExclamation } from "@fortawesome/fontawesome-free-solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamation } from "@fortawesome/fontawesome-free";
 
 export class DeletePotentialVoterButton extends Component {
   render() {

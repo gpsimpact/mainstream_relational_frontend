@@ -3,7 +3,7 @@ import {
   faExclamation,
   faEdit,
   faTrashAlt
-} from "@fortawesome/fontawesome-free-solid";
+} from "@fortawesome/fontawesome-free";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import classNames from "classnames";

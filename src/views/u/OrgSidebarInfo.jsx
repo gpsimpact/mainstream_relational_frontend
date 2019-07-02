@@ -3,8 +3,8 @@ import React, { PureComponent } from "react";
 import { Query } from "react-apollo";
 import ORG_DETAILS from "../../data/queries/orgInfo";
 import { withRouter } from "react-router-dom";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import { faPhone, faAt } from "@fortawesome/fontawesome-free-solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faAt } from "@fortawesome/fontawesome-free";
 // import { isLoggedIn, hasOrgAccess } from '../utils/auth';
 import ReactRouterPropTypes from "react-router-prop-types";
 

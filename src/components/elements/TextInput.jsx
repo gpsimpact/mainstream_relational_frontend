@@ -1,11 +1,8 @@
 import React, { PureComponent } from "react";
 import classnames from "classnames";
 import InputFeedback from "./InputFeedback";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import {
-  faExclamationTriangle,
-  faCheck
-} from "@fortawesome/fontawesome-free-solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationTriangle, faCheck } from "@fortawesome/fontawesome-free";
 import PropTypes from "prop-types";
 
 class TextInput extends PureComponent {

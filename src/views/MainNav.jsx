@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import { faCog, faSignOutAlt } from "@fortawesome/fontawesome-free-solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog, faSignOutAlt } from "@fortawesome/fontawesome-free";
 import PropTypes from "prop-types";
 import { logout } from "../utils/auth";
 import { withRouter, Link } from "react-router-dom";
