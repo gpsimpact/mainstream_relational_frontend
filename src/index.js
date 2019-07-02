@@ -48,10 +48,10 @@ const errorLink = onError(({ networkError, graphQLErrors }) => {
 
 const httpLink = createHttpLink({
   // uri: "/graphql", //process.env.REACT_APP_APOLLO_ENDPOINT || "http://localhost:5000/graphql"
-  uri:
-    process.env.NODE_ENV === "test" || process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://mainstream-relational-server.now.sh"
+  uri: "https://mainstream-relational-server.now.sh"
+  // process.env.NODE_ENV === "test" || process.env.NODE_ENV === "development"
+  //   ? "http://localhost:3000"
+  //   : "https://mainstream-relational-server.now.sh"
 });
 
 const authLink = setContext((_, { headers }) => {
