@@ -1,6 +1,4 @@
 import React, { PureComponent } from "react";
-import { Query } from "react-apollo";
-import ALL_ORGS from "../data/queries/allOrgs";
 import { withRouter, Link } from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';

@@ -13,7 +13,7 @@ class Footer extends PureComponent {
         <Container>
           <Row bsPrefix={'row justify-content-center align-items-center'}>
           <Col lg={6}>
-              <img className="footer-logo" src="/VotertoVoter_Logo_V_White.png"/>
+              <img className="footer-logo" alt="Voter To Voter" src="/VotertoVoter_Logo_V_White.png"/>
             </Col>
             <Col lg={3}>
               <Nav className="flex-column">
@@ -35,7 +35,7 @@ class Footer extends PureComponent {
                 
   
 
-                <Nav.Link target="_blank" href="https://www.mainstreamcoalition.org/donate_foundation" className="donate">Donate </Nav.Link>
+                <Nav.Link target="_blank" rel="noopener noreferrer" href="https://www.mainstreamcoalition.org/donate_foundation" className="donate">Donate </Nav.Link>
 
                 {!this.props.isLoggedIn &&
               <React.Fragment>
@@ -78,7 +78,7 @@ class Footer extends PureComponent {
             <Col lg={6}>
               <p>Voter to Voter is a project created by the MainStream Education Foundation. <br/> <Link to={'/about'}>About Voter to Voter.</Link> All content is (c) 2019.</p>
               <p>Get help or ask questions at <a href="mailto:contact@votertovoter.org">contact@votertovoter.org</a>.</p>
-              <p>Find us on <a href="https://twitter.com/votertovoter" title="Twitter" target="_blank">Twitter</a>, <a href="https://www.facebook.com/votertovoter/" title="Facebook" target="_blank">Facebook</a>, and <a href="https://www.instagram.com/votertovoter/" title="Instagram" target="_blank">Instagram</a>.</p>
+              <p>Find us on <a href="https://twitter.com/votertovoter" title="Twitter" target="_blank" rel="noopener noreferrer">Twitter</a>, <a rel="noopener noreferrer" href="https://www.facebook.com/votertovoter/" title="Facebook" target="_blank">Facebook</a>, and <a rel="noopener noreferrer" href="https://www.instagram.com/votertovoter/" title="Instagram" target="_blank">Instagram</a>.</p>
               <p><Link to={'/privacy'}>Privacy Statement</Link></p>
             </Col>
           </Row>

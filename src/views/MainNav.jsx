@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { logout } from "../utils/auth";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import ReactRouterPropTypes from "react-router-prop-types";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -48,7 +48,7 @@ class MainNav extends PureComponent {
               <Nav.Link>About </Nav.Link>
             </LinkContainer> 
 
-              <Nav.Link target="_blank" href="https://www.mainstreamcoalition.org/donate_foundation" className="donate">Donate </Nav.Link>
+              <Nav.Link target="_blank" rel="noopener noreferrer" href="https://www.mainstreamcoalition.org/donate_foundation" className="donate">Donate </Nav.Link>
 
             {!this.props.isLoggedIn &&
               <React.Fragment>
