@@ -16,6 +16,7 @@ import { setContext } from "apollo-link-context";
 import "./styles/index.css";
 import "react-virtualized/styles.css"; // only needs to be imported once
 // import 'bootstrap/dist/css/bootstrap.css';
+import "./styles/custom.css";
 
 // // Pass your GraphQL endpoint to uri
 // const client = new ApolloClient({

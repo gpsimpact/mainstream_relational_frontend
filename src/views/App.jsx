@@ -13,7 +13,7 @@ class App extends PureComponent {
           <MainNav isLoggedIn={isLoggedIn()} email={getUserEmail()} />
         </header>
         <main>{Routes}</main>
-        <Footer />
+        <Footer isLoggedIn={isLoggedIn()}/>
       </div>
     );
   }

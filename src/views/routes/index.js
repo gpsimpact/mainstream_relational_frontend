@@ -7,6 +7,11 @@ import OrgLanding from '../OrgLanding';
 import U from '../u';
 import Instructions from '../Instructions';
 import Privacy from '../Privacy';
+import About from '../About';
+import LearnMore from '../LearnMore';
+import Resources from '../Resources';
+import Results from '../Results';
+import Join from '../Join';
 // import Login from '../auth/Login';
 // import ForgotPassword from '../../components/ForgotPassword';
 // import ResetPassword from '../../components/ResetPassword';
@@ -21,6 +26,11 @@ export const Routes = (
       <Route path="/instructions" component={Instructions} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/org/:slug" component={OrgLanding} />
+      <Route path="/about" component={About}/>
+      <Route path="/learn-more" component={LearnMore}/>
+      <Route path="/resources" component={Resources}/>
+      <Route path="/results" component={Results}/>
+      <Route path="/join" component={Join}/>
       <Route component={FourOhFour} />
     </Switch>
   </div>
