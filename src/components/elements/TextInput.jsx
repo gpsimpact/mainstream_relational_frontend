@@ -20,6 +20,7 @@ class TextInput extends PureComponent {
     } = this.props;
     const classes = classnames(
       "input",
+      "form-control",
       {
         "is-danger": !!error
       },

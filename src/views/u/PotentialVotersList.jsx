@@ -60,7 +60,8 @@ class PotentialVotersList extends PureComponent {
   render() {
     // const { loading, error, potentialVoters, loadMoreRows } = this.props;
     return (
-      <div>
+      <div className="row">
+        <div className="col-md-12">
         <Query
           query={MY_POTENTIAL_VOTERS}
           variables={{
@@ -138,8 +139,7 @@ class PotentialVotersList extends PureComponent {
 
             return (
               <div>
-                <h1 className="title">You have added {potentialVoters.items.length} contacts:</h1>
-                <hr />
+                <h1 className="section-title">You have added {potentialVoters.items.length} contacts:</h1>
                 <AutoSizer disableHeight>
                   {({ width }) => (
                     <InfiniteLoader
@@ -284,6 +284,7 @@ class PotentialVotersList extends PureComponent {
             );
           }}
         </Query>
+        </div>
       </div>
     );
   }

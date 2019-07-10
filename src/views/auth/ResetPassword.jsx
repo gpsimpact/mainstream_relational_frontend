@@ -96,7 +96,7 @@ class ForgotPassword extends PureComponent {
                       <div className="control">
                         <button
                           type="submit"
-                          className="button is-link submit-button"
+                          className="button is-link submit-button is-fullwidth"
                           color="primary"
                           disabled={isSubmitting}
                         >

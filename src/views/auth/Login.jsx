@@ -19,8 +19,8 @@ class Login extends PureComponent {
     return (
       <Mutation mutation={LOGIN_MUTATION}>
         {login => (
-          <div className="columns is-centered">
-            <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+          <div className="row justify-content-center">
+            <div className="col-md-4">
               <Formik
                 initialValues={{
                   email: '',
@@ -74,7 +74,7 @@ class Login extends PureComponent {
                   <form onSubmit={handleSubmit} className="box">
                     {map(errors.form, error => <FormError key={error} error={error} />)}
                     <div className="field has-text-centered">
-                      <h4 className="is-size-4 has-text-weight-bold">LOGIN</h4>
+                      <h4 className="form-title">LOGIN</h4>
                     </div>
                     <TextInput
                       id="email"
@@ -103,7 +103,7 @@ class Login extends PureComponent {
                       <div className="control">
                         <button
                           type="submit"
-                          className="button is-link submit-button"
+                          className="button is-link submit-button is-fullwidth"
                           color="primary"
                           disabled={isSubmitting}
                         >

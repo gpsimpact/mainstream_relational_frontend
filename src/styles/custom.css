@@ -31,6 +31,12 @@ a:hover,
 a:focus {
     color: #10cf10;
 }
+
+.bg-blue {
+    background-color: #385cad;
+}
+
+
 .logo {
     width: 100%;
     height: auto !important;
@@ -166,8 +172,25 @@ header .navbar {
 
 }
 
-
-
+.button.is-link {
+    display: inline-block;
+    padding: 0px 30px; 
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: korolev-compressed, sans-serif !important;
+    font-weight: bold;
+    background-color: #0a2240;
+    color: #fff;
+    border-radius: 0px;
+}
+.button.is-link:hover,
+.button.is-link:focus {
+    text-decoration: none;
+    background-color: #ffd040;
+    color: #0a2240;
+}
 .btn-link {
     display: block;
     padding: 15px;
@@ -179,12 +202,19 @@ header .navbar {
     font-family: korolev-compressed, sans-serif !important;
     font-weight: bold;
 }
+.btn-link-inline {
+    display: inline-block;
+}
 .btn-link:hover,
 .btn-link:focus {
     text-decoration: none;
     background-color: #ffd040;
     color: #0a2240;
 
+}
+.btn-link-db {
+    background-color: #0a2240;
+    color: #fff;
 }
 .btn-link-blue {
     background-color: #385cad;
@@ -248,8 +278,7 @@ header .navbar {
     text-transform: uppercase;
     color: #385cad;
 }
-
-#page-content .section-title {
+ .section-title {
     font-size: 2rem;
     margin-top: 30px;
     border-bottom: 2px solid #f9f9f9;
@@ -299,4 +328,44 @@ header .navbar {
     font-family: korolev-compressed, sans-serif !important;
     font-weight: bold;
     margin-top: -.5rem !important;
+}
+
+
+
+.box {border-radius: 0px !important;}
+
+
+.form-title {
+    font-size: 2rem;
+}
+
+.notification.is-success {
+    background-color: #10cfc9;
+}
+
+.notification.is-warning {
+    background-color: #ffd040;
+}
+
+.label {
+    margin-bottom: 0rem !important;
+}
+
+.modal-card-head {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+.modal-card-foot {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.button.is-primary {
+    background-color: #10cfc9;
+    border-color: transparent;
+    color: #fff;
+}
+
+.button {
+    border-radius: 0px !important;
 }

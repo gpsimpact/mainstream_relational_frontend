@@ -3,8 +3,7 @@ import React, { PureComponent } from "react";
 import { Query } from "react-apollo";
 import ORG_DETAILS from "../../data/queries/orgInfo";
 import { withRouter } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faAt } from "@fortawesome/fontawesome-free";
+
 // import { isLoggedIn, hasOrgAccess } from '../utils/auth';
 import ReactRouterPropTypes from "react-router-prop-types";
 
@@ -30,15 +29,13 @@ class OrgSidebarInfo extends PureComponent {
                   {organization.contact_name} <br />
                   {organization.contact_phone ? (
                     <span>
-                      <FontAwesomeIcon icon={faPhone} />{" "}
-                      <span style={{ paddingLeft: 20 }}>
+                      <span>
                         {organization.contact_phone}
                       </span>{" "}
                       <br />
                     </span>
                   ) : null}
-                  <FontAwesomeIcon icon={faAt} />
-                  <span style={{ paddingLeft: 20 }}>
+                  <span>
                     {organization.contact_email}
                   </span>
                 </p>

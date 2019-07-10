@@ -3,101 +3,95 @@ import React, { PureComponent } from "react";
 import { Query } from "react-apollo";
 import ORG_DETAILS from "../data/queries/orgInfo";
 import { withRouter, Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faAt } from "@fortawesome/fontawesome-free";
 import { isLoggedIn, hasOrgAccess } from "../utils/auth";
 import ReactRouterPropTypes from "react-router-prop-types";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import Phone from '@material-ui/icons/Phone';
+import Email from '@material-ui/icons/Email';
+
 
 class OrgLanding extends PureComponent {
   render() {
     return (
-      <Query
-        query={ORG_DETAILS}
-        variables={{ where: { slug: this.props.match.params.slug } }}
-      >
-        {({ loading, error, data: { organization } }) => {
-          if (loading) return <div className="loader" />;
-          if (error) return <p>Error!</p>;
-          if (!organization) {
-            return (
-              <div>
-                <h2>
-                  Sorry, this org does not exist. Try one listed{" "}
-                  <Link to="/">here</Link>
-                </h2>
-              </div>
-            );
-          }
-          return (
-            <div>
-              <section className="hero is-vtov-blue is-bold">
-                <div className="hero-body">
-                  <div className="container">
-                    <h1 className="title">{organization.name}</h1>
-                  </div>
-                </div>
-              </section>
-              <section className="section">
-                <div className="container">
-                  <div className="columns">
-                    <div className="column">
-                      <div className="content">
-                        <h2>Welcome!</h2>
-                        <p>{organization.cta}</p>
-                        <h2>For more information contact:</h2>
-                        <p>
-                          {organization.contact_name} <br />
-                          {organization.contact_phone ? (
-                            <div>
-                              <FontAwesomeIcon icon={faPhone} />{" "}
-                              <span style={{ paddingLeft: 20 }}>
-                                {organization.contact_phone}
-                              </span>{" "}
-                              <br />
-                            </div>
-                          ) : null}
-                          <FontAwesomeIcon icon={faAt} />
-                          <span style={{ paddingLeft: 20 }}>
-                            {organization.contact_email}
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column">
-                      <div className="content">
-                        {!isLoggedIn() ? (
-                          <Link
-                            className="button is-vtov-blue is-large"
-                            to={`/auth/register?org_id=${organization.id}`}
-                          >
-                            Register!
-                          </Link>
-                        ) : (
-                          <div>
-                            {hasOrgAccess(organization.id) ? (
-                              <Link
-                                className="button is-vtov-blue is-large"
-                                to={`/u/${organization.id}`}
-                              >
-                                Go To Dashboard!
-                              </Link>
-                            ) : (
-                              // option to put button here to request access
-                              <div />
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          );
-        }}
-      </Query>
+      <section id="page-content">
+      <Container>
+        <Row bsPrefix={"row justify-content-center py-5"}>
+          <Col>
+              <Query
+                query={ORG_DETAILS}
+                variables={{ where: { slug: this.props.match.params.slug } }}
+              >
+                {({ loading, error, data: { organization } }) => {
+                  if (loading) return <div className="loader" />;
+                  if (error) return <p>Error!</p>;
+                  if (!organization) {
+                    return (
+                      <React.Fragment>
+                            <h1 className="page-title">Not Found</h1>
+                              <h2>
+                                  Sorry, this org does not exist. Try one listed{" "}
+                                <Link to="/join">here</Link>
+                              </h2>
+
+                    
+                      </React.Fragment>
+
+                      
+                  
+                    );
+                  }
+                  return (
+                    <React.Fragment>
+                      <h1 class="page-title"> {organization.name} </h1>
+                      <h3 className="section-title">Welcome!</h3>
+                              <p>{organization.cta}</p>
+
+                              <h3 className="section-title">For more information contact:</h3>
+                              <p>{organization.contact_name}</p>
+                              {
+                                organization.contact_phone &&
+                                <p><Phone/> {organization.contact_phone}</p>
+                              }
+                              {
+                                organization.contact_email &&
+                                <p><Email/> {organization.contact_email}</p>
+                              }
+
+                        { !isLoggedIn() 
+                          ?
+                          <React.Fragment>
+                            <Link className="btn-link btn-link-inline btn-link-db"
+                                  to={`/auth/register?org_id=${organization.id}`}
+                            >
+                              Register
+                            </Link>
+                          </React.Fragment>
+                          :
+                          <React.Fragment>
+                            {
+                              hasOrgAccess(organization.id)
+                              ?
+                                <Link className="btn-link btn-link-inline btn-link-db"
+                                  to={`/u/${organization.id}`}
+                                >
+                                  Go To Dashboard
+                                </Link>
+                              :
+                              null
+                            }
+                          </React.Fragment>
+                        }
+                    </React.Fragment>
+                  );
+                }}
+              </Query>
+            </Col>
+          </Row>
+        </Container>
+    </section>
     );
   }
 }

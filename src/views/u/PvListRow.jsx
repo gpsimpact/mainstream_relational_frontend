@@ -17,8 +17,8 @@ class PvListRow extends PureComponent {
       >
         {() => (
           <div>
-            <div className="columns">
-              <div className="column">
+            <div className="row no-gutters">
+              <div className="col-xs-6">
                 {content &&
                 content.voterFileRecord &&
                 content.voterFileRecord.state_file_id ? (
@@ -86,7 +86,7 @@ class PvListRow extends PureComponent {
                   </div>
                 )}
               </div>
-              <div className="column">
+              <div className="col-xs-6">
                 <div className="custom-controls">
                   <div className="columns">
                     <div className="column">

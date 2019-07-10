@@ -17,7 +17,7 @@ class About extends PureComponent {
               <h1 className="page-title">About</h1>
 
               <h3 className="section-title"> About Voter to Voter</h3>
-              <p>Voter to Voter is a strictly non-partisan project of the MainStream Education Foundation (MEF) to increase voter turnout in Kansas. MEF educates and engages individuals to advocate for good governance, quality public education, healthy communities, and sustainable fiscal policy. <a href="https://www.mainstreamcoalition.org/" target="_blank" >Learn more about MEF here.</a></p>
+              <p>Voter to Voter is a strictly non-partisan project of the MainStream Education Foundation (MEF) to increase voter turnout in Kansas. MEF educates and engages individuals to advocate for good governance, quality public education, healthy communities, and sustainable fiscal policy. <a href="https://www.mainstreamcoalition.org/" target="_blank" rel="noopener noreferrer">Learn more about MEF here.</a></p>
               <p>Contact Voter to Voter <a href="mailto:contact@votertovoter.org">contact@votertovoter.org</a>.</p>
               <p>Follow us on <a href="https://twitter.com/votertovoter" title="Twitter" target="_blank" rel="noopener noreferrer">Twitter</a>, <a rel="noopener noreferrer" href="https://www.facebook.com/votertovoter/" title="Facebook" target="_blank">Facebook</a>, and <a rel="noopener noreferrer" href="https://www.instagram.com/votertovoter/" title="Instagram" target="_blank">Instagram</a>.</p>
             

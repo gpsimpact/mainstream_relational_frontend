@@ -13,9 +13,11 @@ class Settings extends PureComponent {
   };
   render() {
     return (
+      <section className="bg-blue">
+
       <div className="container">
-        <div className="columns">
-          <div className="column is-half">
+        <div className="row justify-content-center py-5">
+          <div className="col-md-6">
             <Mutation mutation={CHANGE_PASS_MUTATION}>
               {changePassword => (
                 <Formik
@@ -69,7 +71,7 @@ class Settings extends PureComponent {
                     handleSubmit,
                     isSubmitting,
                   }) => (
-                    <form onSubmit={handleSubmit} style={{ paddingTop: 20 }}>
+                    <form onSubmit={handleSubmit} className="box">
                       {map(errors.form, error => <FormError key={error} error={error} />)}
                       {this.state.alertOpen ? (
                         <div className="notification is-success">
@@ -81,7 +83,7 @@ class Settings extends PureComponent {
                         </div>
                       ) : null}
                       <div className="field has-text-centered">
-                        <h4 className="is-size-4 has-text-weight-bold">Change Password</h4>
+                        <h4 className="form-title">Change Password</h4>
                       </div>
 
                       <TextInput
@@ -139,6 +141,7 @@ class Settings extends PureComponent {
           </div>
         </div>
       </div>
+      </section>
     );
   }
 }

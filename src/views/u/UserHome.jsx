@@ -18,8 +18,17 @@ class UserHome extends PureComponent {
     return (
       <section className="section">
         <div className="container">
-          <div className="columns">
-            <div className="column is-three-quarters" style={{ paddingRight: 30 }}>
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+            <button
+                type="submit"
+                className="button is-link submit-button is-fullwidth my-4 d-lg-none"
+                color="primary"
+                onClick={() => this.setState({ newPvModalOpen: true })}
+              >
+                Add new contact
+              </button>
+
               <PotentialVotersList org_id={this.props.match.params.orgSlug} />
               {isOrgAdmin(this.props.match.params.orgSlug) ? <OrgAdminSection /> : null}
               <div className={classNames('modal', { 'is-active': this.state.newPvModalOpen })}>
@@ -41,10 +50,10 @@ class UserHome extends PureComponent {
                 />
               </div>
             </div>
-            <div className="column">
+            <div className="col-lg-4">
               <button
                 type="submit"
-                className="button is-link submit-button is-fullwidth"
+                className="button is-link submit-button is-fullwidth my-4"
                 color="primary"
                 onClick={() => this.setState({ newPvModalOpen: true })}
               >
@@ -99,17 +108,3 @@ UserHome.propTypes = {
 };
 
 export default withRouter(UserHome);
-
-// <div className="columns">
-//   <div className="column">
-//     <div className="box">
-//       <nav className="breadcrumb" aria-label="breadcrumbs">
-//         <ul>
-//           <li className="is-active">
-//             <a aria-current="page">Dashboard</a>
-//           </li>
-//         </ul>
-//       </nav>
-//     </div>
-//   </div>
-// </div>
