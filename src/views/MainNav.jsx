@@ -16,7 +16,7 @@ class MainNav extends PureComponent {
   };
   render() {
     return (
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" collapseOnSelect>
         <Container bsPrefix={'container d-flex'}>
         <LinkContainer to="/">
           <Navbar.Brand>

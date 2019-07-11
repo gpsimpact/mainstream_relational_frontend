@@ -34,7 +34,7 @@ class VotedModal extends Component {
                         <div>
                           Data about who has voted will not be available until 20 days out from the{' '}
                           {`${cycle}`} election. Check back after{' '}
-                          {cycle === 'primary' ? '7/13/2018' : '10/17/2018'}
+                          {cycle === 'primary' ? '7/13/2019' : '10/17/2019'}
                         </div>
                       )}
                     </div>
@@ -46,7 +46,7 @@ class VotedModal extends Component {
                   <h4>
                     {potentialVoter.first_name} {potentialVoter.last_name} has{' '}
                     {potentialVoter.voterFileRecord.vo_voted_primary ? null : 'NOT'} voted in the
-                    Primary 2018 election!
+                    Primary 2019 election!
                   </h4>
                   <div>
                     {potentialVoter.voterFileRecord.vo_voted_primary ? (
@@ -71,7 +71,7 @@ class VotedModal extends Component {
                   <h4>
                     {potentialVoter.first_name} {potentialVoter.last_name} has{' '}
                     {potentialVoter.voterFileRecord.vo_voted_general ? null : 'NOT'} voted in the
-                    General 2018 election!
+                    General 2019 election!
                   </h4>
                   <div>
                     {potentialVoter.voterFileRecord.vo_voted_general ? (

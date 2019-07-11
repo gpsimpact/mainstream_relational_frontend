@@ -109,7 +109,7 @@ class PvListRow extends PureComponent {
                     <div>
                       <div className="columns">
                         <div className="column">
-                          <strong>Primary Election (Aug 7)</strong>
+                          <strong>Primary Election (Aug 6)</strong>
                           <br />
                           <div className="field is-grouped is-grouped-multiline">
                             <div className="control">
@@ -194,7 +194,7 @@ class PvListRow extends PureComponent {
 
                       <div className="columns">
                         <div className="column">
-                          <strong>General Election (Nov 6)</strong>
+                          <strong>General Election (Nov 5)</strong>
                           <br />
                           <div className="field is-grouped is-grouped-multiline">
                             <div className="control">
