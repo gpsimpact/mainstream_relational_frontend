@@ -53,6 +53,8 @@ class Register extends PureComponent {
                         last_name: '',
                         email: '',
                         org_id: isValidOrg(org_options, qs.org_id) ? qs.org_id : '',
+                        city: '',
+                        phone: '',
                         password: '',
                         password_confirm: '',
                       }}
@@ -68,6 +70,8 @@ class Register extends PureComponent {
                         email: Yup.string()
                           .email('Must be a properly formatted email address')
                           .required('Email is required'),
+                        city: Yup.string().required('City is required'),
+                        phone: Yup.string().required('Phone is required'),
                         password: Yup.string().required('password is required'),
                         password_confirm: Yup.string()
                           .oneOf([Yup.ref('password'), null], 'Passwords do not match!')
@@ -81,6 +85,8 @@ class Register extends PureComponent {
                             email: values.email.toLowerCase().trim(),
                             password: values.password,
                             org_id: values.org_id,
+                            city: values.city,
+                            phone: values.phone
                           },
                         }).then(
                           () => {
@@ -153,6 +159,26 @@ class Register extends PureComponent {
                             placeholder="Enter your last name"
                             error={touched.last_name && errors.last_name}
                             value={values.last_name}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                          />
+                          <TextInput
+                            id="city"
+                            type="text"
+                            label="City"
+                            placeholder="Enter your city"
+                            error={touched.city && errors.city}
+                            value={values.city}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                          />
+                          <TextInput
+                            id="phone"
+                            type="text"
+                            label="Phone"
+                            placeholder="Enter your phone"
+                            error={touched.phone && errors.phone}
+                            value={values.phone}
                             onChange={handleChange}
                             onBlur={handleBlur}
                           />

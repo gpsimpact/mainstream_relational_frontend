@@ -7,6 +7,8 @@ const REGISTRATION_MUTATION = gql`
     $email: String!
     $password: String!
     $org_id: String!
+    $city: String!
+    $phone: String!
   ) {
     registerUser(
       user: {
@@ -15,6 +17,8 @@ const REGISTRATION_MUTATION = gql`
         email: $email
         password: $password
         org_id: $org_id
+        city: $city
+        phone: $phone
       }
     ) {
       first_name
