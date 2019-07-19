@@ -25,7 +25,7 @@ class NoVoterMatchDialogue extends PureComponent {
                   If they are not registered to vote, they will not be listed in the voter file.
                   Please refer them to <a href="https://ksvotes.org">KsVotes.org</a> as an easy way
                   to register. Alternatively you can help them download, print and return the{' '}
-                  <a href="https://www.eac.gov/assets/1/6/Federal_Voter_Registration_03-08-2018_ENG.pdf">
+                  <a href="https://www.eac.gov/assets/1/6/Federal_Voter_Registration_ENG.pdf">
                     Federal Voter Registration Form
                   </a>. Instructions are included in the form.
                 </li>
