@@ -69,13 +69,15 @@ class VoterSearchModal extends Component {
               pv_id={this.state.pv_id}
               close_modal={this.props.close}
             />
-          </section>
 
-          <footer className="modal-card-foot">
-            <button className="button is-danger" onClick={() => this.props.close()}>
+          <button className="button is-danger" onClick={() => this.props.close()}>
               There is no match
             </button>
-          </footer>
+          </section>
+
+          {/* <footer className="modal-card-foot">
+            
+          </footer> */}
         </div>
         <button
           className="modal-close is-large"

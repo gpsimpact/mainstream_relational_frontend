@@ -13,6 +13,8 @@ import { InMemoryCache, defaultDataIdFromObject } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { onError } from "apollo-link-error";
 import { setContext } from "apollo-link-context";
+import ScrollToTop from 'react-router-scroll-top'
+
 import "./styles/index.css";
 import "react-virtualized/styles.css"; // only needs to be imported once
 // import 'bootstrap/dist/css/bootstrap.css';
@@ -83,11 +85,14 @@ const client = new ApolloClient({
   cache
 });
 
+
 const ApolloApp = () => (
   <BrowserRouter>
+  <ScrollToTop>
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
+  </ScrollToTop>
   </BrowserRouter>
 );
 

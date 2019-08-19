@@ -36,8 +36,7 @@ export class VoterSearchResults extends PureComponent {
             return (
               <div className="columns">
                 <div className="column">
-                  <AutoSizer disableHeight>
-                    {({ width }) => (
+            
                       <InfiniteLoader
                         isRowLoaded={({ index }) => !!voters.items[index]}
                         loadMoreRows={() =>
@@ -66,16 +65,21 @@ export class VoterSearchResults extends PureComponent {
                         }
                         rowCount={voters.pageInfo.totalCount}
                       >
-                        {({ onRowsRendered, registerChild }) => (
+                        {({ onRowsRendered, registerChild }) => {
+                          const height = voters.pageInfo.totalCount * 250;
+                          return(
+                          
+                                <AutoSizer disableHeight>
+                                {({  width }) => (
                           <div>
                             <List
                               className="infiniteList"
-                              height={400}
+                              height={height}
                               onRowsRendered={onRowsRendered}
                               noRowsRenderer={() => <NoVoterMatchDialogue />}
                               ref={registerChild}
                               rowCount={voters.items.length}
-                              rowHeight={100}
+                              rowHeight={150}
                               rowRenderer={({ index, style }) => {
                                 let content;
                                 if (index < voters.items.length) {
@@ -97,10 +101,12 @@ export class VoterSearchResults extends PureComponent {
                               overscanRowCount={5}
                             />
                           </div>
-                        )}
+                           )}
+                           </AutoSizer>
+                        )}}
                       </InfiniteLoader>
-                    )}
-                  </AutoSizer>
+                
+                 
                 </div>
               </div>
             );

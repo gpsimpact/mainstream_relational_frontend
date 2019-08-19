@@ -7,34 +7,55 @@ class VoterSearchResultsRow extends PureComponent {
   render() {
     const { content } = this.props;
     return (
-      <div>
-        <nav className="level">
-          <div className="level-left">
-            <div className="level-item">
-              <div className="content">
-                <strong>
+        <div className="row">
+          <div className="col-sm-8">
+                <p><strong>
                   {content.first_name} {content.last_name}
-                </strong>
-                <br />
+                </strong><br/>
                 <small>
-                  {content.home_address} - {content.city}, {content.state} {content.zip} -{' '}
+                  {content.home_address} - {content.city}, {content.state} {content.zip}{' '}
                   {differenceInYears(new Date(), parse(content.dob))} years old
                 </small>
-              </div>
-            </div>
+                
+                </p>
           </div>
-          <div className="level-right">
-            <div className="level-item">
-              <AssociateVoterButton
+          <div className="col-sm-4">
+          <AssociateVoterButton
                 pv_id={this.props.pv_id}
                 voter_id={content.state_file_id}
                 close_modal={this.props.close_modal}
               />
-            </div>
           </div>
-        </nav>
-        <hr />
-      </div>
+        </div>
+
+      // <div>
+      //   <div className="level">
+      //     <div className="level-left">
+      //       <div className="level-item">
+      //         <div className="content">
+      //           <strong>
+      //             {content.first_name} {content.last_name}
+      //           </strong>
+      //           <br />
+      //           <small>
+      //             {content.home_address} - {content.city}, {content.state} {content.zip} <br/>-{' '}
+      //             {differenceInYears(new Date(), parse(content.dob))} years old
+      //           </small>
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <div className="level-right">
+      //       <div className="level-item">
+      //         <AssociateVoterButton
+      //           pv_id={this.props.pv_id}
+      //           voter_id={content.state_file_id}
+      //           close_modal={this.props.close_modal}
+      //         />
+      //       </div>
+      //     </div>
+      //   </div>
+      //   <hr />
+      // </div>
     );
   }
 }
