@@ -67,6 +67,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+
 const link = ApolloLink.from([authLink, errorLink, httpLink]);
 
 const cache = new InMemoryCache({
