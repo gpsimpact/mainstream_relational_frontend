@@ -38,6 +38,7 @@ class UserHome extends PureComponent {
                 />
                 <div className="modal-content">
                   <NewPotentialVoterForm
+                    org_slug={this.props.match.params.orgSlug}
                     toggleOpenStatus={() =>
                       this.setState({ newPvModalOpen: !this.state.newPvModalOpen })
                     }
@@ -60,7 +61,6 @@ class UserHome extends PureComponent {
                 Add new contact
               </button>
               <br />
-              <PointsProfile />
               <OrgSidebarInfo />
               <br />
               <div className="content box">

@@ -22,7 +22,7 @@ class Join extends PureComponent {
               <Row bsPrefix="row">
                 <Col bsPrefix="col-md-4 action-box ab-yellow">
                         <h4> Create a Team</h4>
-                        <p>Bring other voters with you to create a Team! Your Team can be you and some friends, your church, your business group, your company, etc. Get in touch with us at <a href="mailto:contact@votertovoter.org">contact@votertovoter.org</a> to get started. </p>
+                        <p><a href="https://forms.gle/5c4KQ8JRbXTtGnJY8"> Fill out this form to get started.</a></p>
                 </Col>
                 <Col bsPrefix="col-md-4 action-box ab-blue">
                         <h4> Join a Team</h4>
@@ -30,7 +30,7 @@ class Join extends PureComponent {
                 </Col>
                 <Col bsPrefix="col-md-4 action-box ab-teal">
                         <h4> Join as an Individual</h4>
-                        <p>If you want to be an Ambassador without joining a team, we invite you to be a member of the Voter to Voter Crew. <Link to={'/org/mainstream'}>Click here to sign up for our own team of people making a real difference.</Link> </p>
+                        <p>If you want to be an Ambassador without joining a team, we invite you to be a member of the Voter to Voter Crew. <Link to={'/org/votvers'}>Click here to sign up for our own team of people making a real difference.</Link> </p>
                 </Col>
               </Row>
           </Col>

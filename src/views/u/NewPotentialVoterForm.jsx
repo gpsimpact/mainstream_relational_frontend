@@ -33,6 +33,7 @@ class NewPotentialVoterForm extends PureComponent {
             data,
           });
         }}
+
       >
         {createPotentialVoter => (
           <Formik
@@ -60,7 +61,7 @@ class NewPotentialVoterForm extends PureComponent {
                 .then(() => {
                   setSubmitting(false);
                   resetForm();
-                  this.props.toggleOpenStatus();
+                  window.location = `/u/${this.props.match.params.orgSlug}`;
                 })
                 .catch(error => {
                   setSubmitting(false);
