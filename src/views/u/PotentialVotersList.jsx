@@ -68,6 +68,7 @@ class PotentialVotersList extends PureComponent {
             limit: 25,
             org_id: this.props.match.params.orgSlug,
           }}
+          fetchPolicy="cache-and-network"
         >
           {({ data: { potentialVoters }, loading, error, fetchMore }) => {
             // console.log(foo);
