@@ -68,9 +68,9 @@ class PvListRow extends PureComponent {
                     <br />
                     <small>{content.city}</small>
                     <br />
-                    <small>
+                    {/* <small>
                       Points: {content.pointsEarned} / {content.pointsPotential}
-                    </small>
+                    </small> */}
                     <br />
                     <small>
                       <a onClick={this.props.openVoterReviewModal}>
