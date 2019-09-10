@@ -22,7 +22,7 @@ class Join extends PureComponent {
               <Row bsPrefix="row">
                 <Col bsPrefix="col-md-4 action-box ab-yellow">
                         <h4> Create a Team</h4>
-                        <p><a href="https://forms.gle/5c4KQ8JRbXTtGnJY8"> Fill out this form to get started.</a></p>
+                        <p>Bring other voters with you to create a Team! Your Team can be you and some friends, your church, your business group, your company, etc.<a href="https://forms.gle/5c4KQ8JRbXTtGnJY8"> Fill out this form to get started.</a></p>
                 </Col>
                 <Col bsPrefix="col-md-4 action-box ab-blue">
                         <h4> Join a Team</h4>

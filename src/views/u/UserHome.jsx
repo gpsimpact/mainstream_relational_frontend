@@ -71,10 +71,10 @@ class UserHome extends PureComponent {
                 </p>
                 <small>
                   <dl>
-                    <dt>
+                    {/* <dt>
                       <abbr title="The count of available tasks for that contact.">TASKS:</abbr>
                     </dt>
-                    <dd>The count of available tasks for that contact.</dd>
+                    <dd>The count of available tasks for that contact.</dd> */}
                     <dt>
                       <abbr title="Has this contact been matched to the voter file?">
                         Registered?

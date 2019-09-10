@@ -43,13 +43,7 @@ class PvListRow extends PureComponent {
                       {content.voterFileRecord.zipcode}
                     </small>
                     <br />
-                    <small>
-                      Points:{" "}
-                      {content.pointsEarned > content.pointsPotential
-                        ? content.pointsPotential
-                        : content.pointsEarned}{" "}
-                      / {content.pointsPotential}
-                    </small>
+               
                     <br />
                     <small>
                       Voter Propensity Score:{" "}
@@ -90,18 +84,7 @@ class PvListRow extends PureComponent {
                 <div className="custom-controls">
                   <div className="columns">
                     <div className="column">
-                      {/* Start of tasks */}
-                      <div>
-                        <a onClick={this.props.openTaskModal}>
-                          Tasks (
-                          {`${
-                            content.countCompletedTasks
-                          }/${content.countAvailableTasks +
-                            content.countCompletedTasks} completed`}
-                          )
-                        </a>
-                      </div>
-                      {/* End of tasks */}
+                      
                     </div>
                   </div>
                   {content.voterFileRecord &&
