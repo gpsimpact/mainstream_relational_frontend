@@ -4,7 +4,7 @@ import FourOhFour from './404';
 import HomePage from '../HomePage';
 import Auth from '../auth';
 import OrgLanding from '../OrgLanding';
-import U from '../u';
+import U from '../dashboard';
 import Instructions from '../Instructions';
 import Privacy from '../Privacy';
 import About from '../About';
