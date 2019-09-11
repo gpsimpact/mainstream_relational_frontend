@@ -96,10 +96,7 @@ class LinkedVoterFileRecordReviewModal extends Component {
                 </div>
               ) : (
                 <div>
-                  <h4>
-                    {potentialVoter.first_name} {potentialVoter.last_name} is NOT currently linked
-                    to voter file record
-                  </h4>
+                
                   <p>
                     This contact is not currently matched to a voter file record. Click below to
                     attempt to search for their record to link to this contact.
