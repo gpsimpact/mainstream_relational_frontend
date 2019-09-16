@@ -1,0 +1,13 @@
+.individualVoterCard {
+    margin-bottom: 30px;
+}
+
+.individualVoterCardHeader {
+    background-color: #39C0C0;
+    color: white;
+    font-weight: 600;
+}
+
+.individualVoterCardHeader h2 {
+    font-size: 30px;
+}

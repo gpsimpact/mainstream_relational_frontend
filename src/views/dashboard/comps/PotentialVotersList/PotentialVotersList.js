@@ -2,9 +2,11 @@ import React, { PureComponent } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Query } from 'react-apollo';
 
-import { Intro } from './comps/intro';
-import MY_POTENTIAL_VOTERS from '../../data/queries/potentialVoters';
+import { Intro } from '../Intro/intro';
+import MY_POTENTIAL_VOTERS from '../../../../data/queries/potentialVoters';
 // import VoterSearchModal from './comps/Modals/VoterSearchModal';
+import IndividualVoter from '../IndividualVoter/IndividualVoter';
+import IndividualVoterModal from '../Modals/individualVoterModal';
 
 
 class PotentialVotersList extends PureComponent {
@@ -28,21 +30,19 @@ class PotentialVotersList extends PureComponent {
                         return <Intro />
                     }
 
-                    console.log(potentialVoters.items);
+                    // console.log(potentialVoters.items);
 
                     return (
                         <div>
                             {potentialVoters.items.map((item, idx) => {
                                 // console.log(item.first_name);
-                                // break out into own component (individual voter)
+                                // break out into individual voter component
                                 return (
-                                    <div key={idx}>
-                                        <p>
-                                            {item.first_name} {item.last_name}
-                                        </p>
+                                    <div>
+                                    <IndividualVoter key={idx} item={item} />
                                     </div>
                                 );
-                            }) }
+                            })}
                         </div>
                     );
                 }}
