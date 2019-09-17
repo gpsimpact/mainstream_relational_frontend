@@ -6,6 +6,11 @@ import Col from 'react-bootstrap/Col';
 
 class Resources extends PureComponent {
   render() {
+    const iframeStyle = {
+      backgroundColor: "transparent",
+      border: "none",
+      overflow: "hidden",
+    }
     return (
       <section id="page-content">
       <Container>
@@ -28,6 +33,12 @@ class Resources extends PureComponent {
                 Ambassador Getting Started Guide - Spanish 
                 </a>
               </p>
+              <h2 class="section-title text-uppercase"> Lookup your voter guide</h2>
+              <iframe style={iframeStyle} 
+              scrolling="no" src="https://mainstreamcoalition-vote.civicengine.com/widget/address_search" 
+              width="100%" 
+              height="250"><p>iframe not supported.</p>
+              </iframe>
           
           </Col>
         </Row>
