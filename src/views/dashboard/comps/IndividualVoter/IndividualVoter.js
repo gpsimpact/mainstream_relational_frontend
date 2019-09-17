@@ -1,23 +1,53 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import IndividualVoterModal from '../Modals/individualVoterModal';
+import EditVoterModal from '../Modals/EditVoterModal';
+import DeleteVoterModal from '../Modals/DeleteVoterModal';
+import MatchVoterModal from '../Modals/MatchVoterModal';
+import VoterFileModal from '../Modals/VoterFileModal';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import "./style.css";
 
 function IndividualVoter(props) {
     // console.log(props.item);
 
-    const child = props.item;
+    // changing "child" to "voter" 
+    const voter = props.voter;
+    const voterMatched = voter && voter.voterFileRecord && voter.voterFileRecord.state_file_id;
 
     return (
         <div>
             <div className="card individualVoterCard">
-                <div className="card-header individualVoterCardHeader">
-                    <h2>{child.first_name} {child.last_name}</h2>
+                <div className={`card-header individualVoterCardHeader ${voterMatched ? "matched-voter" : "unmatched-voter"}`}>
+                    <Row bsPrefix={"row no-gutters w-100"}>
+                        <Col md={6}>
+                            <h2>{voter.first_name} {voter.last_name}</h2>
+                        </Col>
+                        <Col md={6}>
+                            <ul className="list-inline crud-btns">
+                                <li className="list-inline-item"><EditVoterModal voter={voter} /></li>
+                                <li className="list-inline-item"><DeleteVoterModal voter={voter}/></li>
+                            </ul>
+                        </Col>
+                    </Row>
                 </div>
                 <div className="card-body">
-                    <p>{child.city}</p>
-                    <IndividualVoterModal propsFromParent={child} />
+                    <p>{voter.city}</p>
+                 
+                        {
+                            voterMatched
+                            ?
+                                <VoterFileModal voter={voter}/>
+                            :
+                                <MatchVoterModal voter={voter}/>
+                            
+                        }
+                      
+                    
+                    
                 </div>
             </div>
         </div>

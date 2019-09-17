@@ -17,8 +17,11 @@ class UserHome extends PureComponent {
             <section className="section">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-lg-10">
+                        <div className="col-lg-8">
                             <PotentialVotersList />
+                        </div>
+                        <div className="col-lg-4">
+                            Create/intro content
                         </div>
                     </div>
                 </div>
