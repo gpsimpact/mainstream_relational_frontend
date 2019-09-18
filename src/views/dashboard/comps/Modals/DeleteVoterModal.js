@@ -44,37 +44,37 @@ function DeleteVoterModal(props) {
                     <Mutation
                         mutation={UPDATE_PV}
                         variables={{ id: voter.id, data: { deleted: true } }}
-                        // update={(store, { data: { updatePotentialVoter } }) => {
-                        //     const data = store.readQuery({
-                        //         query: MY_POTENTIAL_VOTERS,
-                        //         variables: { limit: 25, org_id: props.match.params.orgSlug }
-                        //     });
+                        update={(store, { data: { updatePotentialVoter } }) => {
+                            const data = store.readQuery({
+                                query: MY_POTENTIAL_VOTERS,
+                                variables: { limit: 25, org_id: props.match.params.orgSlug }
+                            });
 
-                        //     // remove item from cache
-                        //     data.potentialVoters.items = filter(
-                        //         data.potentialVoters.items,
-                        //         item => item.id !== updatePotentialVoter.id
-                        //     );
+                            // remove item from cache
+                            data.potentialVoters.items = filter(
+                                data.potentialVoters.items,
+                                item => item.id !== updatePotentialVoter.id
+                            );
 
-                        //     store.writeQuery({
-                        //         query: MY_POTENTIAL_VOTERS,
-                        //         variables: { limit: 25, org_id: props.match.params.orgSlug },
-                        //         data
-                        //     });
-                        // }}
-                        refetchQueries={[
-                            { query: MY_POTENTIAL_VOTERS, 
-                            variables: { limit: 25, org_id: props.match.params.orgSlug }}
-                        ]}
+                            store.writeQuery({
+                                query: MY_POTENTIAL_VOTERS,
+                                variables: { limit: 25, org_id: props.match.params.orgSlug },
+                                data
+                            });
+                        }}
+                        // refetchQueries={[{ 
+                        //     query: MY_POTENTIAL_VOTERS, 
+                        //     variables: { limit: 25, org_id: props.match.params.orgSlug }
+                        // }]}
                     >
                         {updatePotentialVoter => (
                             <button
                                 className="button is-danger"
                                 onClick={() =>
                                     updatePotentialVoter()
-                                        .then(() => {
+                                        .then((data) => {
                                             console.log("\n\n\n\n ");
-                                            console.log(this);
+                                            console.log(data);
                                             console.log("\n\n\n\n ");
 
                                             setSmShow(false);
