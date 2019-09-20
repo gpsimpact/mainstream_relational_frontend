@@ -24,16 +24,20 @@ import DisassociateVoterButton from './DisassociateVoterButton';
 
 class LinkedVoterFileRecordReviewModal extends Component {
   render() {
+
     const { potentialVoter } = this.props;
+
     return (
       <div className={classNames('modal', { 'is-active': this.props.open })}>
         <div className="modal-background" onClick={() => this.props.close()} />
 
         <div className="modal-card">
+
           <header className="modal-card-head">
             <p className="modal-card-title">Associated Voter File Record</p>
             <button className="delete" aria-label="close" onClick={() => this.props.close()} />
           </header>
+          
           <section className="modal-card-body">
             <div className="content">
               {potentialVoter.voterFileRecord.state_file_id ? (

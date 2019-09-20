@@ -7,7 +7,9 @@ import { CellMeasurer } from "react-virtualized";
 
 class PvListRow extends PureComponent {
   render() {
+
     const { content } = this.props;
+    
     return (
       <CellMeasurer
         cache={this.props.cache}

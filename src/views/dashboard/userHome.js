@@ -20,9 +20,9 @@ class UserHome extends PureComponent {
                         <div className="col-lg-8">
                             <PotentialVotersList />
                         </div>
-                        <div className="col-lg-4">
+                        {/* <div className="col-lg-4">
                             Create/intro content
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
