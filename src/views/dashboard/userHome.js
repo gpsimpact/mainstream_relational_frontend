@@ -4,8 +4,6 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 
 import PotentialVotersList from './comps/PotentialVotersList/PotentialVotersList';
 import NewPotentialVoterForm from './comps/Modals/AddPotentialVoterModal';
-// import PotentialVotersList from '../u/PotentialVotersList';
-
 
 class UserHome extends PureComponent {
 
