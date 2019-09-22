@@ -6,12 +6,17 @@
     text-align: center;
 }
 
-.match-div {
+.this-is-them {
     border-radius: 5px;
-    background-color: #39C0C0;
+    background-color: #39C0C0 !important;
     padding: 10px;
     margin-bottom: 10px;
     text-align: center;
+    width: 100%;
+}
+
+.this-is-them p {
+    margin-bottom: 0;
 }
 
 .match-name {
@@ -22,6 +27,6 @@
     color: antiquewhite;
 }
 
-.match-div p {
-    margin-bottom: 2px;
+.new-search {
+    margin-bottom: 20px;
 }

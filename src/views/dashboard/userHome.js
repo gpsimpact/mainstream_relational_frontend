@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
 import PotentialVotersList from './comps/PotentialVotersList/PotentialVotersList';
+import NewPotentialVoterForm from './comps/Modals/AddPotentialVoterModal';
 // import PotentialVotersList from '../u/PotentialVotersList';
 
 
@@ -20,9 +21,9 @@ class UserHome extends PureComponent {
                         <div className="col-lg-8">
                             <PotentialVotersList />
                         </div>
-                        {/* <div className="col-lg-4">
-                            Create/intro content
-                        </div> */}
+                        <div className="col-lg-4">
+                            <NewPotentialVoterForm />
+                        </div>
                     </div>
                 </div>
             </section>
