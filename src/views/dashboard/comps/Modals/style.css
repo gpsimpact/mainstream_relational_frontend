@@ -5,3 +5,8 @@
 .voters-name {
     color: #385CAD;
 }
+
+/****** AddPotentialVoterModal ******/
+.add-voter-form {
+    margin-top: 28px;
+}
