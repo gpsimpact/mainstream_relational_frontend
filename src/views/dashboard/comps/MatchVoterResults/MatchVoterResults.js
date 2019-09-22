@@ -31,7 +31,7 @@ export class MatchVoterResults extends PureComponent {
                     state: this.props.voter.state
                 }}
             >
-                {({ data: { voters }, loading, error }) => {
+                {({ data: { voters }, loading, error, refetch }) => {
                     if (loading) {
                         return <p>Loading...</p>
                     }
@@ -61,13 +61,18 @@ export class MatchVoterResults extends PureComponent {
                                     city: Yup.string()
                                 })}
                                 onSubmit={(values, { setSubmitting }) => {
+
+                                    refetch(values);
+                                    
                                     setSubmitting(false);
 
-                                    this.props.update({
-                                        first_name: values.first_name.trim(),
-                                        last_name: values.last_name.trim(),
-                                        city: values.city.trim()
-                                    });
+                                    console.log(this.props.voter);
+
+                                    // this.props.voter.update({
+                                    //     first_name: values.first_name.trim(),
+                                    //     last_name: values.last_name.trim(),
+                                    //     city: values.city.trim()
+                                    // });
                                 }}
                                 enableReinitialize={true}
                                 render={({
@@ -77,7 +82,16 @@ export class MatchVoterResults extends PureComponent {
                                     handleChange,
                                     handleBlur,
                                     handleSubmit,
-                                    isSubmitting
+                                    isSubmitting,
+
+                                    // handleChange = event => {
+                                    //     const { name, value } = event.target;
+                                    //     this.setState({
+                                    //         [name]: value
+                                    //     });
+                                    //     console.log(event);
+                                    // }
+
                                 }) => (
                                         <form onSubmit={handleSubmit}>
                                             <div className="columns">
@@ -125,6 +139,9 @@ export class MatchVoterResults extends PureComponent {
                                                         className="button is-link submit-button is-fullwidth new-search"
                                                         color="primary"
                                                         disabled={isSubmitting}
+
+                                                        onClick={() => refetch()}
+
                                                     >
                                                         Search
                                                     </button>
