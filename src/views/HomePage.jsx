@@ -7,6 +7,11 @@ import Col from 'react-bootstrap/Col';
 
 class HomePage extends PureComponent {
   render() {
+    const iframeStyle = {
+      backgroundColor: "transparent",
+      border: "none",
+      overflow: "hidden",
+    }
     return (
       <React.Fragment>
         <section id="hero">
@@ -20,6 +25,23 @@ class HomePage extends PureComponent {
                 </Col>
               </Row>
             </Container>
+        </section>
+        <section id="voter-guide">
+          <Container>
+            <Row bsPrefix={'row justify-content-center align-items-center'}>
+              <Col md={4}>
+              <p><strong>Who Is On Your Ballot? </strong>Enter your home address to find out more about the candidates and issues on your ballot, get a voter guide, reminders, and more from ksballot.org</p>
+
+              </Col>
+              <Col md={4}>
+              <iframe style={iframeStyle} 
+              scrolling="no" src="https://mainstreamcoalition-vote.civicengine.com/widget/address_search" 
+              width="100%" 
+              height="125"><p>iframe not supported.</p>
+              </iframe>
+              </Col>
+            </Row>
+          </Container>
         </section>
 
         <section id="home-content">

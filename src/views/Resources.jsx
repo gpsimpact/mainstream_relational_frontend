@@ -33,7 +33,8 @@ class Resources extends PureComponent {
                 Ambassador Getting Started Guide - Spanish 
                 </a>
               </p>
-              <h2 class="section-title text-uppercase"> Lookup your voter guide</h2>
+              <h2 class="section-title text-uppercase"> Who Is On Your Ballot?</h2>
+              <p>Enter your home address to find out more about the candidates and issues on your ballot, get a voter guide, reminders, and more from ksballot.org</p>
               <iframe style={iframeStyle} 
               scrolling="no" src="https://mainstreamcoalition-vote.civicengine.com/widget/address_search" 
               width="100%" 

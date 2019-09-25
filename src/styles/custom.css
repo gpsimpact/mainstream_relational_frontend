@@ -369,3 +369,9 @@ header .navbar {
 .button {
     border-radius: 0px !important;
 }
+
+
+#voter-guide{
+    padding: 25px 0px 5px;
+    background-color: #10cfc9;
+}
