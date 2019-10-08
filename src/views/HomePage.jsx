@@ -17,10 +17,10 @@ class HomePage extends PureComponent {
         <section id="hero">
             <Container>
               <Row bsPrefix={'row justify-content-center'}>
-                <Col md={6}>
-                    <h1 className="title">82% turnout.</h1>
+                <Col lg={6}>
+                    <h1 className="title">WHAT IF EVERYONE VOTED?</h1>
                     <p>
-                    Of 5,500 Kansas voters connected to Voter to Voter, 82% of them cast a ballot in the 2018 general election. You can help push that even higher!
+                    You know at least 10 people who don’t even know there’s an election this November! Make sure they vote by joining us in this non-partisan project that <strong>turned out 82% of participants in 2018!</strong>
                     </p>
                 </Col>
               </Row>
