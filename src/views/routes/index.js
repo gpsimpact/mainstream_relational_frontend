@@ -37,15 +37,3 @@ export const Routes = (
   </div>
 );
 
-const ScrollToTop = () => {
-  window.scrollTo(0, 0);
-  return null;
-};
-/*
-
-      <Route exact path="/forgotPassword" component={ForgotPassword} />
-      <Route exact path="/passwordReset" component={ResetPassword} />
-      <Route path="/org" component={OrgRoutes} />
-      <Route path="/u" component={UserRoutes} />
-      
-*/

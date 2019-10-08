@@ -19,6 +19,8 @@ class VoterSearchModal extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    
     if (!isEqual(nextProps.potentialVoter, this.props.potentialVoter)) {
       this.setState({
         potentialVoter: nextProps.potentialVoter,

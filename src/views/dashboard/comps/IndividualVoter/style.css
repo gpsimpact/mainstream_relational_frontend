@@ -1,0 +1,34 @@
+.individualVoterCard {
+    margin-bottom: 30px;
+    border-radius: 0px;
+    border: none;
+}
+
+.individualVoterCardHeader {
+    background-color: #39C0C0;
+    color: white;
+    font-weight: 600;
+    border-radius: 0px !important;
+
+}
+.matched-voter {
+    border-bottom: 2px solid #385cad;
+}
+.unmatched-voter {
+    border-bottom:2px solid #ff3860;
+}
+
+.individualVoterCardHeader h2 {
+    font-size: 30px;
+}
+
+.crud-btns {
+    margin-top: 15px;
+}
+
+@media (min-width: 768px){
+    .crud-btns {
+        margin-top: 3px;
+        text-align: right !important;
+    }
+};

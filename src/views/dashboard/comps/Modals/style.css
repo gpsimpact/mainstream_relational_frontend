@@ -1,0 +1,12 @@
+.modal-backdrop {
+    z-index: 1;
+}
+
+.voters-name {
+    color: #385CAD;
+}
+
+/****** AddPotentialVoterModal ******/
+.add-voter-form {
+    margin-top: 28px;
+}

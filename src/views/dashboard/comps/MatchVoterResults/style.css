@@ -1,0 +1,32 @@
+.no-match {
+    border-radius: 5px;
+    background-color: #39C0C0;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.this-is-them {
+    border-radius: 5px;
+    background-color: #39C0C0 !important;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.this-is-them p {
+    margin-bottom: 0;
+}
+
+.match-name {
+    font-weight: bolder;
+}
+
+.match-address {
+    color: antiquewhite;
+}
+
+.new-search {
+    margin-bottom: 20px;
+}

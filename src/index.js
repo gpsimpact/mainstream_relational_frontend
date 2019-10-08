@@ -14,6 +14,7 @@ import { createHttpLink } from "apollo-link-http";
 import { onError } from "apollo-link-error";
 import { setContext } from "apollo-link-context";
 import ScrollToTop from 'react-router-scroll-top'
+import { clientMutations } from './lib/resolvers';
 
 import "./styles/index.css";
 import "react-virtualized/styles.css"; // only needs to be imported once
@@ -81,9 +82,21 @@ const cache = new InMemoryCache({
   }
 });
 
+cache.writeData({data: {
+  voterPageInfo: {
+    __typename: "VoterPageInfo",
+    nextCursor: null,
+    previousCursor: null,
+    hasNext: null,
+    hasPrevious: null
+}}})
+
 const client = new ApolloClient({
   link,
-  cache
+  cache,
+  resolvers: {
+    Mutation: clientMutations,
+  }
 });
 
 
