@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Button from 'react-bootstrap/Button';
 import { Mutation } from 'react-apollo';
-import { Formik, yupToFormErrors, Form } from 'formik';
+import { Formik } from 'formik';
 import Yup from 'yup';
 import { map } from 'lodash';
 

@@ -36,6 +36,7 @@ class Resources extends PureComponent {
               <h2 class="section-title text-uppercase"> Who Is On Your Ballot?</h2>
               <p>Enter your home address to find out more about the candidates and issues on your ballot, get a voter guide, reminders, and more from ksballot.org</p>
               <iframe style={iframeStyle} 
+              title="Who is on your Ballot?"
               scrolling="no" src="https://mainstreamcoalition-vote.civicengine.com/widget/address_search" 
               width="100%" 
               height="250"><p>iframe not supported.</p>

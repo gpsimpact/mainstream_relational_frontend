@@ -4,7 +4,6 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Button from 'react-bootstrap/Button';
 
 import './style.css';
-import MatchVoterResults from '../MatchVoterResults/MatchVoterResults';
 
 
 function VoterFileModal(props) {

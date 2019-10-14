@@ -5,7 +5,6 @@ import EditVoterModal from '../Modals/EditVoterModal';
 import DeleteVoterModal from '../Modals/DeleteVoterModal';
 import MatchVoterModal from '../Modals/MatchVoterModal';
 import VoterFileModal from '../Modals/VoterFileModal';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -42,7 +41,7 @@ function IndividualVoter(props) {
                             ?
                                 <VoterFileModal voter={voter}/>
                             :
-                                <MatchVoterModal voter={voter}/>
+                                <MatchVoterModal voter={voter} voterMatched={voterMatched}/>
                             
                         }
                       

@@ -8,8 +8,7 @@ import TextInput from '../TextInput/TextInput';
 import MY_POTENTIAL_VOTERS from '../../../../data/queries/potentialVoters';
 import NEW_POTENTIAL_VOTER from '../../../../data/mutations/newPotentialVoter';
 import ReactRouterPropTypes from 'react-router-prop-types';
-import PropTypes from 'prop-types';
-import { map, sortBy } from 'lodash';
+import { sortBy } from 'lodash';
 
 class NewPotentialVoterForm extends PureComponent {
 
@@ -146,7 +145,6 @@ class NewPotentialVoterForm extends PureComponent {
 NewPotentialVoterForm.propTypes = {
   location: ReactRouterPropTypes.location.isRequired,
   match: ReactRouterPropTypes.match.isRequired,
-  toggleOpenStatus: PropTypes.func.isRequired,
 };
 
 export default withRouter(NewPotentialVoterForm);

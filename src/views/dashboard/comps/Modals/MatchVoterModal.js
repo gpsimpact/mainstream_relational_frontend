@@ -5,46 +5,58 @@ import Button from 'react-bootstrap/Button';
 
 import './style.css';
 import MatchVoterResults from '../MatchVoterResults/MatchVoterResults';
-import ConfirmedVoterMatchModal from './ConfirmedVoterMatchModal';
-import { fullscreen } from 'glamor';
 
-function MatchVoterModal(props) {
-    // console.log(props.propsFromParent.first_name);
 
-    const [smShow, setSmShow] = useState(false);
-    // changing "child" to "voter" 
-    const voter = props.voter;
-    // console.log(voter);
+class MatchVoterModal extends React.Component {
+    constructor(props){
+        super(props);
+        this.state= {
+            voter: this.props.voter,
+            first_name: this.props.voter.first_name,
+            last_name: this.props.voter.last_name,
+            city: this.props.voter.city,
+            voterId: this.props.voter.id,
+            voterMatched: this.props.voterMatched,
+            modal: false,
+        }
+    }
 
-    return (
-
-        <div>
+    
+    render(){
+        console.log(this.state);
+        return (
+            
+            <div>
 
             <ButtonToolbar>
-                <Button variant="secondary" onClick={() => setSmShow(true)}>Match Voter File</Button>
+                <Button variant="secondary" onClick={() => this.setState({modal: !this.state.modal})}>Match Voter File</Button>
             </ButtonToolbar>
 
             <Modal
                 size="lg"
-                show={smShow}
-                onHide={() => setSmShow(false)}
-            >
+                show={this.state.modal}
+                onHide={() => this.setState({modal: false})}
+                >
                 <Modal.Header closeButton>
                     <Modal.Title>
-                        Associated Voter File Record
+                        Match to Voter File Record
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    No record associated with your contact {voter.first_name} {voter.last_name}. See if any of the records below match your contact.
-                </Modal.Body>
-                <Modal.Body>
-                <MatchVoterResults voter={voter} />
+                    {
+                        !this.state.voterMatched && 
+                        <p>No record associated with your contact {this.state.voter.first_name} {this.state.voter.last_name}. See if any of the records below match your contact.
+                        </p>
+                    }
+
+                    {!this.state.voterMatched }
                 </Modal.Body>
             </Modal>
 
         </div>
 
     );
+    }
 }
 
 export default MatchVoterModal;

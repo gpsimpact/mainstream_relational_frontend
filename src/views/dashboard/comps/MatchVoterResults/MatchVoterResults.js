@@ -6,8 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Yup from "yup";
 import { Formik } from "formik";
 import { Mutation } from 'react-apollo';
-import PropTypes from "prop-types";
-
 import "./style.css";
 import VOTER_SEARCH from '../../../../data/queries/voterSearch';
 import TextInput from "../TextInput/TextInput";
@@ -18,8 +16,6 @@ import { findIndex } from 'lodash';
 export class MatchVoterResults extends PureComponent {
 
     render() {
-        // console.log(this.props);
-
         return (
             <Query
                 query={VOTER_SEARCH}
@@ -38,11 +34,7 @@ export class MatchVoterResults extends PureComponent {
                     else if (error) {
                         return <p>Error.... {error.message}</p>
                     }
-                    if (voters.items.length === 0) {
-                        return <p className={"this-is-them"}>No voters found by that name.</p>
-                    }
-
-                    // console.log(voters.items);
+        
 
                     return (
                         <div>
@@ -60,19 +52,13 @@ export class MatchVoterResults extends PureComponent {
                                     last_name: Yup.string().required("Last name is required"),
                                     city: Yup.string()
                                 })}
-                                onSubmit={(values, { setSubmitting }) => {
+                                onSubmit={async (values, { setSubmitting, resetForm }) => {
 
-                                    refetch(values);
-                                    
-                                    setSubmitting(false);
+                                    let r = await refetch(values);  
+                                    console.log(r);                                  
+                                    resetForm(values);
 
-                                    console.log(this.props.voter);
-
-                                    // this.props.voter.update({
-                                    //     first_name: values.first_name.trim(),
-                                    //     last_name: values.last_name.trim(),
-                                    //     city: values.city.trim()
-                                    // });
+                        
                                 }}
                                 enableReinitialize={true}
                                 render={({
@@ -83,14 +69,6 @@ export class MatchVoterResults extends PureComponent {
                                     handleBlur,
                                     handleSubmit,
                                     isSubmitting,
-
-                                    // handleChange = event => {
-                                    //     const { name, value } = event.target;
-                                    //     this.setState({
-                                    //         [name]: value
-                                    //     });
-                                    //     console.log(event);
-                                    // }
 
                                 }) => (
                                         <form onSubmit={handleSubmit}>
@@ -139,9 +117,6 @@ export class MatchVoterResults extends PureComponent {
                                                         className="button is-link submit-button is-fullwidth new-search"
                                                         color="primary"
                                                         disabled={isSubmitting}
-
-                                                        onClick={() => refetch()}
-
                                                     >
                                                         Search
                                                     </button>
@@ -150,7 +125,16 @@ export class MatchVoterResults extends PureComponent {
                                         </form>
                                     )}
                             />
-                            {voters.items.map((item, idx) => {
+                            {
+                                voters.items.length === 0 
+                                ?
+                                    <Row>
+                                        <Col md={12}>
+                                          <p className="this-is-them">  No voters found by that name.</p>
+                                        </Col>
+                                    </Row>
+                                :
+                                voters.items.map((item, idx) => {
 
                                 return (
                                     <Row bsPrefix="row" key={idx}>
@@ -188,8 +172,7 @@ export class MatchVoterResults extends PureComponent {
                                                         className="this-is-them"
                                                         onClick={() => associateVoter()
                                                             .then(() => 
-                                                            alert("Hello")
-                                                            // this.props.close_modal()
+                                                                this.props.setModal(false)
                                                             )}
                                                     >
                                                         <p>

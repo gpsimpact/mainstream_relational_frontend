@@ -35,6 +35,7 @@ class HomePage extends PureComponent {
               </Col>
               <Col md={4}>
               <iframe style={iframeStyle} 
+              title="Who is on your ballot?"
               scrolling="no" src="https://mainstreamcoalition-vote.civicengine.com/widget/address_search" 
               width="100%" 
               height="125"><p>iframe not supported.</p>
