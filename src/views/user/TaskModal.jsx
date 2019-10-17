@@ -1,0 +1,226 @@
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import SchemaForm from "./SchemaForm";
+import { Mutation } from "react-apollo";
+import UPDATE_TASK from "../../data/mutations/updateTask";
+import POINTS_PROFILE_USER_ORG_LIMITED from "../../data/queries/pointsProfileUserOrgLimited";
+import { getUserEmail } from "../../utils/auth";
+import { withRouter } from "react-router-dom";
+import ReactRouterPropTypes from "react-router-prop-types";
+import { sortBy, filter } from "lodash";
+
+class TaskModal extends PureComponent {
+  state = {
+    selectedTask: null
+  };
+
+  render() {
+    const { potentialVoter } = this.props;
+    const excludeArchivedTasks = filter(potentialVoter.tasks, task => {
+      return task.status === "COMPLETE" || task.status === "INCOMPLETE";
+    });
+    const sortedTasks = sortBy(excludeArchivedTasks, "status").reverse();
+    const sequenceSortedTasks = sortBy(sortedTasks, "sequence");
+    return (
+      <div
+        className={classNames("modal", {
+          "is-active": this.props.open
+        })}
+      >
+        <div className="modal-background" onClick={() => this.props.close()} />
+
+        <div className="modal-card">
+          <header className="modal-card-head">
+            <p className="modal-card-title">Tasks</p>
+            <button
+              className="delete"
+              aria-label="close"
+              onClick={() => this.props.close()}
+            />
+          </header>
+          <section className="modal-card-body">
+            <div className="content">
+              {!potentialVoter.voterFileRecord ||
+              !potentialVoter.voterFileRecord.state_file_id ? (
+                <div className="content">
+                  <h4>Match this person to the voter file. </h4>
+                  <p>
+                    <strong>
+                      Your first task is to make sure this person is registered
+                      to vote!
+                    </strong>
+                  </p>
+                  <p>
+                    First, check to see if you can match them up with a record
+                    in the public voter file provided by your county.
+                  </p>
+                  <button
+                    className="button is-link submit-button is-fullwidth"
+                    color="primary"
+                    onClick={() => {
+                      this.props.close();
+                      this.props.openVoterSearchModal();
+                    }}
+                  >
+                    Search for matching voter records
+                  </button>
+                  <p style={{ paddingTop: 10 }}>
+                    If they aren’t there, it might be that they aren’t
+                    registered to vote. You should contact them and ask them if
+                    they’ve registered recently, or if you might have their name
+                    or city wrong. If they aren’t registered, or they don’t
+                    know, encourage them to go to ksvotes.org to check their
+                    registration or to register
+                  </p>
+                </div>
+              ) : null}
+              <Mutation
+                mutation={UPDATE_TASK}
+                refetchQueries={[
+                  {
+                    query: POINTS_PROFILE_USER_ORG_LIMITED,
+                    variables: {
+                      email: getUserEmail(),
+                      org_id: this.props.match.params.orgSlug
+                    }
+                  }
+                ]}
+              >
+                {updateTask => (
+                  <div>
+                    {this.state.selectedTask !== null ? (
+                      <div>
+                        {this.state.selectedTask.status === "COMPLETE" ? (
+                          <div>
+                            <p>
+                              This task is already completed. If you wish to
+                              reset it, please click below
+                            </p>
+                            <button
+                              className="button is-danger"
+                              onClick={() =>
+                                updateTask({
+                                  variables: {
+                                    id: this.state.selectedTask.id,
+                                    status: "INCOMPLETE",
+                                    form_data: {}
+                                  }
+                                }).then(() => this.props.close())
+                              }
+                            >
+                              Reset Task
+                            </button>
+                          </div>
+                        ) : (
+                          <SchemaForm
+                            key={this.state.selectedTask.id}
+                            taskId={this.state.selectedTask.id}
+                            schema={this.state.selectedTask.form_schema}
+                            point_value={this.state.selectedTask.point_value}
+                            submitFn={values =>
+                              updateTask({
+                                variables: {
+                                  id: this.state.selectedTask.id,
+                                  status: "COMPLETE",
+                                  form_data: values
+                                }
+                              }).then(() => this.props.close())
+                            }
+                          />
+                        )}
+                      </div>
+                    ) : (
+                      <div>
+                        {sequenceSortedTasks.length > 0 ? (
+                          <div className="content">
+                            <h4>
+                              Click a task below to preview or complete.
+                              Completed tasks earn points!
+                            </h4>
+                            <table className="table">
+                              <thead>
+                                <tr>
+                                  <th>Description</th>
+
+                                  <th>Points</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {sequenceSortedTasks.map(task => (
+                                  <tr
+                                    className={classNames("task_row", {
+                                      complete: task.status === "COMPLETE"
+                                    })}
+                                    key={task.id}
+                                    onClick={() => {
+                                      // if (task.status !== 'COMPLETE') {
+                                      this.setState({
+                                        selectedTask: task
+                                      });
+                                      // }
+                                    }}
+                                  >
+                                    <td
+                                      className={classNames("task_title", {
+                                        complete: task.status === "COMPLETE"
+                                      })}
+                                    >
+                                      <span
+                                        style={{
+                                          textDecoration:
+                                            task.status === "COMPLETE"
+                                              ? "line-through"
+                                              : "underline"
+                                        }}
+                                      >
+                                        {task.description}
+                                      </span>
+                                    </td>
+
+                                    <td>{task.point_value}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        ) : (
+                          <div>
+                    
+                            <h2>
+                              You&apos;ve completed all the currently assigned
+                              tasks for this voter!
+                            </h2>
+                            <p>
+                              Check back again soon as we are always adding more
+                              tasks
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </Mutation>
+            </div>
+          </section>
+        </div>
+        <button
+          className="modal-close is-large"
+          aria-label="close"
+          onClick={() => this.props.close()}
+        />
+      </div>
+    );
+  }
+}
+
+TaskModal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  close: PropTypes.func.isRequired,
+  potentialVoter: PropTypes.object.isRequired,
+  match: ReactRouterPropTypes.match.isRequired,
+  openVoterSearchModal: PropTypes.func.isRequired
+};
+
+export default withRouter(TaskModal);
