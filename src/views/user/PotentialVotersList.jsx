@@ -13,7 +13,6 @@ import PvEditModal from './PvEditModal';
 import DeleteModal from './DeleteModal';
 // import { queries, fragments } from '../../data/queries';
 import { Pagination } from './Pagination';
-import queryString from 'query-string'
 import { PageInfo } from '../../utils/parsePageInfo';
 
 class PotentialVotersList extends PureComponent {
@@ -54,7 +53,7 @@ class PotentialVotersList extends PureComponent {
 
 
   render() {
-    const pageInfo = new PageInfo(queryString.parse(this.props.location.search));
+    const pageInfo = new PageInfo(this.props.location.search);
     return (
       <div className="row">
         <div className="col-md-12">
