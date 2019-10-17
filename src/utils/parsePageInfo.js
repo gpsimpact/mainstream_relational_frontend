@@ -1,7 +1,7 @@
 export class PageInfo {
     constructor(params){
         this.params = new URLSearchParams(params);
-        this.limit = 25;
+        this.limit = 10;
         this.pageNumber = this.getPageNumber();
         this.offset=this.calcOffset();
     }
