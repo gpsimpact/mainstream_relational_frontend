@@ -7,9 +7,7 @@ import { Query } from "react-apollo";
 // import AssociateVoterButton from './AssociateVoterButton';
 // import { faBadgeCheck, faExclamation } from '@fortawesome/fontawesome-pro-solid';
 // import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { InfiniteLoader, AutoSizer, List } from "react-virtualized";
 import PropTypes from "prop-types";
-import { uniqBy } from "lodash";
 import NoVoterMatchDialogue from "./NoVoterMatchDialogue";
 import VoterSearchResultsRow from "./VoterSearchResultsRow";
 
@@ -51,11 +49,9 @@ export class VoterSearchResults extends PureComponent {
                   })
                 }
                 {data && data.votersv2 && data.votersv2.items && data.votersv2.items.length < 1 &&
-                  <p>
-                    <br/>
-                      There are no results for {this.props.first_name} {this.props.last_name} in {this.props.city}.
-                      <br/>
-                    </p>
+                <div className="py-2">
+                    <NoVoterMatchDialogue />
+                    </div>
                 }
              </div>
             );

@@ -1,6 +1,6 @@
 export class PageInfo {
     constructor(params){
-        this.limit = 5;
+        this.limit = 25;
         this.pageNumber = params.page ? parseInt(params.page) : 1;
         this.offset=this.calcOffset();
     }

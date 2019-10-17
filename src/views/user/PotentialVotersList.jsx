@@ -55,7 +55,6 @@ class PotentialVotersList extends PureComponent {
 
   render() {
     const pageInfo = new PageInfo(queryString.parse(this.props.location.search));
-    console.log(pageInfo);
     return (
       <div className="row">
         <div className="col-md-12">
