@@ -16,7 +16,7 @@ class Footer extends PureComponent {
               <img className="footer-logo" alt="Voter To Voter" src="/VotertoVoter_Logo_V_White.png"/>
             </Col>
             <Col lg={3}>
-              <Nav className="flex-column">
+              <Nav className="flex-column align-items-center">
                 <LinkContainer to="/">
                     <Nav.Link>Home</Nav.Link>
                 </LinkContainer>

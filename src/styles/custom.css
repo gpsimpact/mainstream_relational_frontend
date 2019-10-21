@@ -26,6 +26,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 a {
     color: #385cad;
+    text-decoration: underline;
 }
 a:hover,
 a:focus {
@@ -88,6 +89,7 @@ header .navbar {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
     color: #fff !important;
+    text-decoration: none;
 }
 
 
@@ -254,7 +256,13 @@ header .navbar {
     display: block;
     max-width: 100%;
     margin: 0 auto;
-    width: 300px;
+    width: 100px;
+    margin-bottom: 30px;
+}
+@media (min-width: 768px){
+    .footer-logo {
+        width: 300px;
+    }
 }
 .footer a {
     color:#fff;
