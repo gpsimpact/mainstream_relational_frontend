@@ -22,6 +22,37 @@ class Resources extends PureComponent {
           <Col md={8}>
               <h1 class="page-title">Voting Resources</h1>
 
+              <h2 class="section-title text-uppercase"> Voter to Voter Resources</h2>
+              <p><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSdtQvBiMZIc6X_njOePEVyiX3Zouus0onq1Mj7cwQv1-AZFyg/viewform">RSVP here for upcoming Voter to Voter trainings and events!
+              </a></p>
+              <p>
+                <a href="/pdfs/Ambassador Getting Started Guide 2019.pdf" target="_blank" rel="noopener noreferrer">Ambassador Getting Started Guide
+                </a> 
+                </p>
+                <p>
+                <a href="/pdfs/SPANISH - Ambassador Getting Started Guide 2019.pdf" target="_blank" rel="noopener noreferrer">
+                Ambassador Getting Started Guide - Spanish 
+                </a>
+              </p>
+
+              <p>
+                <a href="https://drive.google.com/file/d/1u6Y5YsDDLRqq8IrbleHDT4vgbgd6mObU/view" target="_blank" rel="noopener noreferrer">
+                A short video on how to join a team and add voters
+                  </a>
+              </p>
+
+              <h2 class="section-title text-uppercase">Voter Resources</h2>
+              <p> <a rel="noopener noreferrer" href="https://www.ksvotes.org/" target="_blank">Register to vote here, and sign up to receive your ballot in the mail!</a></p>
+              <p><strong>Who Is On Your Ballot? </strong>Enter your home address to find out more about the candidates and issues on your ballot, get a voter guide, reminders, and more from ksballot.org</p>
+              <iframe style={iframeStyle} 
+              title="Who is on your Ballot?"
+              scrolling="no" src="https://mainstreamcoalition-vote.civicengine.com/widget/address_search" 
+              width="100%" 
+              height="250"><p>iframe not supported.</p>
+              </iframe>
+
+
+{/* 
               <p>These are a few resources for Kansans looking to vote, help others vote, or increase voter turnout (even if you’re not an Ambassador for Voter to Voter).</p>
 
               <p>RSVP <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSdtQvBiMZIc6X_njOePEVyiX3Zouus0onq1Mj7cwQv1-AZFyg/viewform">here </a> for upcoming Voter to Voter trainings and events!</p>
@@ -45,7 +76,7 @@ class Resources extends PureComponent {
               width="100%" 
               height="250"><p>iframe not supported.</p>
               </iframe>
-          
+           */}
           </Col>
         </Row>
       </Container>

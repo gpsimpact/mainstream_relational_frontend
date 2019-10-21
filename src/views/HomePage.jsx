@@ -77,6 +77,24 @@ class HomePage extends PureComponent {
                   <p>
                   Join us! If you live in Kansas, you can be a Voting Ambassador with Voter to Voter. Join now, or learn more with the links below. Be a part of making a real difference.
                   </p>
+
+                       <p>  
+                       <Link className="" to="/resources">
+                           Learn more about being an Ambassador or a Team Leader
+                       </Link>
+                       </p>
+                       <p>  
+                       <Link className="" to="/join">
+                           Join Voter to Voter Now!
+                       </Link>
+                       </p>
+                       <p>  
+                       <Link className="" to="/learn-more">
+                        Find out more about the Voter to Voter project
+                        </Link>
+                       </p>
+
+
                 </Col>
                 
               </Row>
