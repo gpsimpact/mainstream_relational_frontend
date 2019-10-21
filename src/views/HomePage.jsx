@@ -67,8 +67,9 @@ class HomePage extends PureComponent {
                 <p>
                   Turning out voters is the number one effort in every election. Many times, as much as half of the electorate doesn’t vote. Those people remain unrepresented by their governments, at the local and national levels. The old methods aren’t working anymore. Door knocking and phone banking barely move the needle. So we’ve started something new in Kansas with Voter to Voter.
                   </p>
+                  <p><strong> Here’s the bottom line.</strong></p>
                   <p>
-                  Here’s the bottom line. In the 2018 general election in Kansas, with record turnout, 56% of registered voters cast a ballot. Among the 5,500 Kansas voters connected to Voter to Voter, 82% of them turned out. It gets better. Infrequent voters in Kansas had just a 33% turnout rate. But infrequent voters connected to Voter to Voter turned out at 75%!
+                   In the 2018 general election in Kansas, with record turnout, 56% of registered voters cast a ballot. Among the 5,500 Kansas voters connected to Voter to Voter, 82% of them turned out. It gets better. Infrequent voters in Kansas had just a 33% turnout rate. But infrequent voters connected to Voter to Voter turned out at 75%!
                   </p>
                   <p>
                   These next elections will determine so much! Your local government. Redistricting. School policy. Our next President. Help us make sure everyone is represented. You can be part of making a real difference in the local elections in 2019, and national elections in 2020.
