@@ -43,19 +43,11 @@ class VoterSearchModal extends Component {
             <button className="delete" aria-label="close" onClick={() => this.props.close()} />
           </header>
           <section className="modal-card-body">
-            <Query query={DATA_DATES}>
-              {({ loading, error, data: { dataDates } }) => {
-                if (loading) return <div className="loader" />;
-                if (error) return <p>Error!</p>;
-                return (
+          
                   <div className="notification is-warning">
-                    Voter information is complete as of{' '}
-                    {distanceInWordsToNow(parse(dataDates.voterFileDate))} ago. We tend to update
-                    data once per month so check back soon if you can not find a match yet.
+                    Voter information is updated in Voter to Voter at the beginning of the election season, usually about two months before an election.
                   </div>
-                );
-              }}
-            </Query>
+               
             <VoterSearchForm
               first_name={this.state.potentialVoter.first_name}
               last_name={this.state.potentialVoter.last_name}
