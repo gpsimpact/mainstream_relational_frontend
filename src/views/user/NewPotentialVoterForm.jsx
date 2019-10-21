@@ -45,7 +45,6 @@ class NewPotentialVoterForm extends PureComponent {
             validationSchema={Yup.object().shape({
               first_name: Yup.string().required('First name is required'),
               last_name: Yup.string().required('Last name is required'),
-              city: Yup.string().required('City is required'),
             })}
             onSubmit={(values, { setSubmitting, setErrors, resetForm }) => {
               createPotentialVoter({
@@ -53,7 +52,7 @@ class NewPotentialVoterForm extends PureComponent {
                   data: {
                     first_name: values.first_name,
                     last_name: values.last_name,
-                    city: values.city,
+                    city: values.city ? values.city : '',
                     org_id: this.props.match.params.orgSlug,
                   },
                 },
