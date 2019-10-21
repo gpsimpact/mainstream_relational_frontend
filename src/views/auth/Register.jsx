@@ -28,7 +28,7 @@ class Register extends PureComponent {
     return (
       <Query
         query={ALL_ORGS}
-        variables={{ limit: 200, orderBy: [{ sort: 'name', direction: 'ASC' }] }}
+        variables={{ limit: 500, orderBy: [{ sort: 'name', direction: 'ASC' }] }}
       >
         {({ loading, error, data }) => {
           if (loading) return <div className="loader" />;
@@ -138,7 +138,7 @@ class Register extends PureComponent {
                             />
                           ) : (
                             <h5 className="is-size-6" style={{ paddingBottom: 10 }}>
-                              You are registering with organization: {org_labels[qs.org_id]}
+                              You are registering with team: {org_labels[qs.org_id]}
                             </h5>
                           )}
 
