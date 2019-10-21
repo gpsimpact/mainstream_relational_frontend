@@ -19,7 +19,7 @@ class OrgLanding extends PureComponent {
       <section id="page-content">
       <Container>
         <Row bsPrefix={"row justify-content-center py-5"}>
-          <Col>
+          <Col md={8}>
               <Query
                 query={ORG_DETAILS}
                 variables={{ where: { slug: this.props.match.params.slug } }}
@@ -45,20 +45,24 @@ class OrgLanding extends PureComponent {
                   }
                   return (
                     <React.Fragment>
-                      <h1 class="page-title"> {organization.name} </h1>
-                      <h3 className="section-title">Welcome!</h3>
+                      <h1 class="page-title"> Join </h1>
+                      <p>Without Voting Ambassadors, this project would not succeed. Thank you. You are joining:</p>
+                      <h2 className="section-title">{organization.name}</h2>
                               <p>{organization.cta}</p>
+                              {organization && organization.admin_notes && 
+                                <p>{organization.admin_notes}</p>
+                              }
 
-                              <h3 className="section-title">For more information contact:</h3>
-                              <p>{organization.contact_name}</p>
+                              <p>{organization.contact_name}&nbsp;&nbsp;
                               {
                                 organization.contact_phone &&
-                                <p><Phone/> {organization.contact_phone}</p>
+                                <span>&middot;&nbsp;&nbsp;<Phone/> {organization.contact_phone}&nbsp;&nbsp;</span>
                               }
                               {
                                 organization.contact_email &&
-                                <p><Email/> {organization.contact_email}</p>
+                                <span>&middot;&nbsp;&nbsp;<Email/> {organization.contact_email}</span>
                               }
+                              </p>
 
                         { !isLoggedIn() 
                           ?
@@ -66,7 +70,7 @@ class OrgLanding extends PureComponent {
                             <Link className="btn-link btn-link-inline btn-link-db"
                                   to={`/auth/register?org_id=${organization.id}`}
                             >
-                              Register
+                              Join
                             </Link>
                           </React.Fragment>
                           :
