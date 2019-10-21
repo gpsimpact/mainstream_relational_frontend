@@ -56,14 +56,14 @@ class OrgLanding extends PureComponent {
                                 <p>{organization.admin_notes}</p>
                               }
 
-                              <p><strong>Team Lead: </strong>{organization.contact_name}&nbsp;&nbsp;
+                              <p><strong>Team Lead: &nbsp;</strong>{organization.contact_name}&nbsp;&nbsp;
                               {
                                 organization.contact_phone &&
                                 <span>&middot;&nbsp;&nbsp;<Phone/> {organization.contact_phone}&nbsp;&nbsp;</span>
                               }
                               {
                                 organization.contact_email &&
-                                <span>&middot;&nbsp;&nbsp;<Email/> {organization.contact_email}</span>
+                                <span>&middot;&nbsp;&nbsp;<a href={`mailto:${organization.contact_email}`}><Email/>{organization.contact_email}</a></span>
                               }
                               </p>
 
