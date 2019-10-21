@@ -6,6 +6,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 class HomePage extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter';
+  }
   render() {
     const iframeStyle = {
       backgroundColor: "transparent",

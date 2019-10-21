@@ -51,7 +51,7 @@ class ListOrgs extends React.Component {
                 <Col>
                 
  
-                <h3 className="section-title">{this.props.title ? this.props.title : 'Organizations'}</h3>
+                <h3 className="section-title">{this.props.title ? this.props.title : 'Teams'}</h3>
                 <Row>
                     <Col md={10}>
                         <Form.Group>
