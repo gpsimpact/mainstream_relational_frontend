@@ -48,7 +48,7 @@ class MainNav extends PureComponent {
               <Nav.Link>About </Nav.Link>
             </LinkContainer> 
 
-              <Nav.Link target="_blank" rel="noopener noreferrer" href="https://www.mainstreamcoalition.org/donate_foundation" className="donate">Donate </Nav.Link>
+              <Nav.Link target="_blank" rel="noopener noreferrer" href="https://www.mainstreamcoalition.org/donate_foundation">Donate </Nav.Link>
 
             {!this.props.isLoggedIn &&
               <React.Fragment>
