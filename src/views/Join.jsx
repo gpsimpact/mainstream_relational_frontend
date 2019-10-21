@@ -9,6 +9,9 @@ import ListOrgs from '../components/ListOrgs';
 
 
 class Join extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | Join';
+  }
   render() {
     return (
       <section id="page-content">

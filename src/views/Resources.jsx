@@ -5,6 +5,10 @@ import Col from 'react-bootstrap/Col';
 
 
 class Resources extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | Resources';
+  }
+
   render() {
     const iframeStyle = {
       backgroundColor: "transparent",

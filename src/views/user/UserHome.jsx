@@ -13,6 +13,9 @@ class UserHome extends PureComponent {
   state = {
     newPvModalOpen: false,
   };
+  componentDidMount() {
+    document.title = 'Voter to Voter | Dashboard';
+  }
   render() {
     return (
       <section className="section">

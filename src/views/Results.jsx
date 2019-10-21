@@ -6,6 +6,9 @@ import Col from 'react-bootstrap/Col';
 
 
 class Results extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | Results';
+  }
   render() {
     return (
       <section id="page-content">

@@ -12,9 +12,13 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 import { map } from 'lodash';
 
 class ForgotPassword extends PureComponent {
+
   state = {
     alertOpen: false,
   };
+  componentDidMount() {
+    document.title = 'Voter to Voter | Forgot Password';
+  }
   render() {
     return (
       <Mutation mutation={FORGOT_PASS_MUTATION}>

@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 
 
 class LearnMore extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | Learn More';
+  }
   render() {
     return (
       <section id="page-content">

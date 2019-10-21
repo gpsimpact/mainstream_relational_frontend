@@ -19,6 +19,9 @@ const isValidOrg = (orgs, org_id) => {
 };
 
 class Register extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | Register';
+  }
   render() {
     if (isLoggedIn()) {
       return <Redirect to="/u/" />;

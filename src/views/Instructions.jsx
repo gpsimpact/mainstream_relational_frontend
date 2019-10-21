@@ -3,6 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 class Instructions extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | Instructions';
+  }
   render() {
     return (
       <section id="page-content">

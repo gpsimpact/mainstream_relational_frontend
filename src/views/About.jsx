@@ -8,6 +8,9 @@ import ALL_ORGS from "../data/queries/allOrgs";
 import ListOrgs from '../components/ListOrgs';
 
 class About extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | About';
+  }
   render() {
     return (
       <section id="page-content">

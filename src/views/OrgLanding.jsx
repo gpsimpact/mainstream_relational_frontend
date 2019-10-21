@@ -14,6 +14,9 @@ import Email from '@material-ui/icons/Email';
 
 
 class OrgLanding extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | Join';
+  }
   render() {
     return (
       <section id="page-content">

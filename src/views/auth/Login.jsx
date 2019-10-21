@@ -12,6 +12,9 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 import { map } from 'lodash';
 
 class Login extends PureComponent {
+  componentDidMount() {
+    document.title = 'Voter to Voter | Login';
+  }
   render() {
     if (isLoggedIn()) {
       return <Redirect to="/u/" />;

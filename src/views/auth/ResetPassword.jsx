@@ -15,6 +15,9 @@ class ForgotPassword extends PureComponent {
   state = {
     alertOpen: false,
   };
+  componentDidMount() {
+    document.title = 'Voter to Voter | Reset Password';
+  }
   render() {
     return (
       <Mutation mutation={RESET_PASS_MUTATION}>
