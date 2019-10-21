@@ -23,17 +23,23 @@ class Join extends PureComponent {
               <p>Voter to Voter is free, non-partisan, and effective. You can become a Voting Ambassador as part of a Team, or as an individual.</p>
 
               <Row bsPrefix="row">
-                <Col bsPrefix="col-md-4 action-box ab-yellow">
+                <Col bsPrefix="col-md-4">
+                  <div className="action-box ab-yellow">
                         <h4> Create a Team</h4>
                         <p>Bring other voters with you to create a Team! Your Team can be you and some friends, your church, your business group, your company, etc.<a href="https://forms.gle/5c4KQ8JRbXTtGnJY8"> Fill out this form to get started.</a></p>
+                  </div>
                 </Col>
-                <Col bsPrefix="col-md-4 action-box ab-blue">
+                <Col bsPrefix="col-md-4">
+                  <div className="action-box ab-blue">
                         <h4> Join a Team</h4>
                         <p>Below is the list of Teams registered with Voter to Voter. If you’ve been invited to join a team, find them in the list, and click on their name to join them as an Ambassador.</p>
+                  </div>
                 </Col>
-                <Col bsPrefix="col-md-4 action-box ab-teal">
+                <Col bsPrefix="col-md-4">
+                  <div className="action-box ab-teal">
                         <h4> Join as an Individual</h4>
                         <p>If you want to be an Ambassador without joining a team, we invite you to be a member of the Voter to Voter Crew. <Link to={'/org/votvers'}>Click here to sign up for our own team of people making a real difference.</Link> </p>
+                        </div>
                 </Col>
               </Row>
           </Col>
