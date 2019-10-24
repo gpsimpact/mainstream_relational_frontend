@@ -28,6 +28,7 @@ export const Routes = (
       <Route path="/instructions" component={Instructions} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/org/:slug" component={OrgLanding} />
+      <Route path="/team/:slug" component={OrgLanding} />
       <Route path="/about" component={About}/>
       <Route path="/learn-more" component={LearnMore}/>
       <Route path="/resources" component={Resources}/>
