@@ -60,7 +60,7 @@ class NewPotentialVoterForm extends PureComponent {
                 .then(() => {
                   setSubmitting(false);
                   resetForm();
-                  window.location = `/u/${this.props.match.params.orgSlug}`;
+                  window.location.reload();
                 })
                 .catch(error => {
                   setSubmitting(false);

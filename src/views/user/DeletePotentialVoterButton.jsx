@@ -22,7 +22,7 @@ export class DeletePotentialVoterButton extends Component {
             className="button is-danger"
             onClick={() =>
               updatePotentialVoter().then(() => 
-                window.location = `${this.props.location.pathname}`
+                window.location.reload()
 
               )
             }
