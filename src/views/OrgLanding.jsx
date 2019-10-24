@@ -79,7 +79,7 @@ class OrgLanding extends PureComponent {
                             <Link className="btn-link btn-link-inline btn-link-db"
                                   to={`/auth/register?org_id=${organization.id}`}
                             >
-                              Join
+                              Join this team
                             </Link>
                           </React.Fragment>
                           :
