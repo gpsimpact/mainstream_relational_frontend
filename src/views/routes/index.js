@@ -33,6 +33,7 @@ export const Routes = (
       <Route path="/resources" component={Resources}/>
       <Route path="/results" component={Results}/>
       <Route path="/join" component={Join}/>
+      <Route path="/:slug" component={OrgLanding} />
       <Route component={FourOhFour} />
     </Switch>
   </div>

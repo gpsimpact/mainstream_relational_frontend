@@ -33,11 +33,17 @@ class OrgLanding extends PureComponent {
                   if (!organization) {
                     return (
                       <React.Fragment>
-                            <h1 className="page-title">Not Found</h1>
-                              <h2>
-                                  Sorry, this org does not exist. Try one listed{" "}
-                                <Link to="/join">here</Link>
-                              </h2>
+                         
+                                <h1 className="title">Page Not Found</h1>
+                                <h2 className="subtitle">404. Oh no.</h2>
+                                <h2>
+                                                          Sorry, this page does not exist. 
+                                                        
+                                                      </h2>
+                                <h2><Link to="/join">Join a team.</Link></h2>
+                                <h2><Link to="/">Head back home.</Link></h2>
+
+                                                
 
                     
                       </React.Fragment>
