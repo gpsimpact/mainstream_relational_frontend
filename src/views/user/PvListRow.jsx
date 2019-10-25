@@ -151,7 +151,7 @@ class PvListRow extends PureComponent {
                       </div>
                       <div className="col-lg-4">
                       <h3>General Election (Nov 5)</h3>
-                      <div className="row">
+                      <div className="row no-gutters">
                         <div className="col-lg-4">
                                 {/*  TAG */}
                                 <div
