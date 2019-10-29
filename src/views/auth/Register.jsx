@@ -57,6 +57,7 @@ class Register extends PureComponent {
                         email: '',
                         org_id: isValidOrg(org_options, qs.org_id) ? qs.org_id : '',
                         city: '',
+                        state: 'KS',
                         phone: '',
                         password: '',
                         password_confirm: '',
@@ -74,6 +75,7 @@ class Register extends PureComponent {
                           .email('Must be a properly formatted email address')
                           .required('Email is required'),
                         city: Yup.string().required('City is required'),
+                        state: Yup.string().max(2, 'Please use 2 character state abbreviation').required('State is required'),
                         phone: Yup.string().required('Phone is required'),
                         password: Yup.string().required('password is required'),
                         password_confirm: Yup.string()
@@ -89,7 +91,8 @@ class Register extends PureComponent {
                             password: values.password,
                             org_id: values.org_id,
                             city: values.city,
-                            phone: values.phone
+                            phone: values.phone,
+                            state: values.state
                           },
                         }).then(
                           () => {
@@ -172,6 +175,16 @@ class Register extends PureComponent {
                             placeholder="Enter your city"
                             error={touched.city && errors.city}
                             value={values.city}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                          />
+                          <TextInput
+                            id="state"
+                            type="text"
+                            label="State"
+                            placeholder="Enter your state"
+                            error={touched.state && errors.state}
+                            value={values.state}
                             onChange={handleChange}
                             onBlur={handleBlur}
                           />

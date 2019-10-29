@@ -70,6 +70,7 @@ class PotentialVotersList extends PureComponent {
         >
           {({ data, loading, error, fetchMore }) => {
             const potentialVoters = data && data.potentialVotersV2 ? data.potentialVotersV2 : [];
+            console.log(data);
             if (loading) {
               return <p>Loading...</p>;
             } else if (error) {

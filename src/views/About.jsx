@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 import { Query } from "react-apollo";
-import ALL_ORGS from "../data/queries/allOrgs";
+import ALL_ORGS2 from "../data/queries/allOrgs2";
 import ListOrgs from '../components/ListOrgs';
 
 class About extends PureComponent {
@@ -43,18 +43,16 @@ class About extends PureComponent {
 
         
           <Query
-                    query={ALL_ORGS}
-                    variables={{
-                      limit: 200,
-                      orderBy: [{ sort: "name", direction: "ASC" }]
-                    }}
+                    query={ALL_ORGS2}
+                  
                   >
                     {({ loading, error, data }) => {
                       if (loading) return <div className="loader" />;
                       if (error) return <p>Error!</p>;
+                      console.log(data);
                       return (
                         <React.Fragment>
-                          {data && data.organizations && data.organizations.items && <ListOrgs orgs={data.organizations.items} title={'Partners'}/>}
+                          {data && data.organizationsV2 && data.organizationsV2 && <ListOrgs orgs={data.organizationsV2} title={'Partners'}/>}
                         </React.Fragment>
                       );
                     }}
