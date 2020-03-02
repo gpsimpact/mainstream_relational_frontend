@@ -41,7 +41,7 @@
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "HTTPS=true PORT=3001 react-scripts start",
+    "start-js": "set HTTPS=true&&react-scripts start",
     "start": "NODE_ENV=production npm-run-all -p watch-css start-js",
     "dev": "NODE_ENV=development npm-run-all -p watch-css start-js-dev",
     "start-js-dev":"PORT=3001 react-scripts start",
