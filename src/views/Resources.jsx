@@ -26,7 +26,7 @@ class Resources extends PureComponent {
               <p><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSdtQvBiMZIc6X_njOePEVyiX3Zouus0onq1Mj7cwQv1-AZFyg/viewform">RSVP here for upcoming Voter to Voter trainings and events!
               </a></p>
               <p>
-                <a href="/pdfs/Ambassador Getting Started Guide 2019.pdf" target="_blank" rel="noopener noreferrer">Ambassador Getting Started Guide
+                <a href="https://docs.google.com/document/d/1Fazk_KV8wx3_Dm0m7IzCww0dwWKja11KxbWiM1dp9V0/edit" target="_blank" rel="noopener noreferrer">Ambassador Getting Started Guide
                 </a> 
                 </p>
                 <p>
@@ -41,7 +41,7 @@ class Resources extends PureComponent {
                   </a>
               </p>
 
-              <h2 class="section-title text-uppercase">Voter Resources</h2>
+              {/* <h2 class="section-title text-uppercase">Voter Resources</h2>
               <p> <a rel="noopener noreferrer" href="https://www.ksvotes.org/" target="_blank">Register to vote here, and sign up to receive your ballot in the mail!</a></p>
               <p><strong>Who Is On Your Ballot? </strong>Enter your home address to find out more about the candidates and issues on your ballot, get a voter guide, reminders, and more from ksballot.org</p>
               <iframe style={iframeStyle} 
@@ -49,7 +49,7 @@ class Resources extends PureComponent {
               scrolling="no" src="https://mainstreamcoalition-vote.civicengine.com/widget/address_search" 
               width="100%" 
               height="250"><p>iframe not supported.</p>
-              </iframe>
+              </iframe> */}
 
 
 {/* 

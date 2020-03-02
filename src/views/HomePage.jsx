@@ -29,7 +29,7 @@ class HomePage extends PureComponent {
               </Row>
             </Container>
         </section>
-        <section id="voter-guide">
+        {/* <section id="voter-guide">
           <Container>
             <Row bsPrefix={'row justify-content-center align-items-center'}>
               <Col md={4}>
@@ -46,7 +46,7 @@ class HomePage extends PureComponent {
               </Col>
             </Row>
           </Container>
-        </section>
+        </section> */}
 
         <section id="home-content">
         <Container>
