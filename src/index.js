@@ -4,6 +4,7 @@ import App from "./views/App";
 // import ApolloClient from 'apollo-boost';
 // import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from "react-router-dom";
+import HttpsRedirect from "react-https-redirect";
 // import registerServiceWorker from "./registerServiceWorker";
 import { unregister } from "./registerServiceWorker";
 import { ApolloProvider } from "react-apollo";
@@ -13,8 +14,8 @@ import { InMemoryCache, defaultDataIdFromObject } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { onError } from "apollo-link-error";
 import { setContext } from "apollo-link-context";
-import ScrollToTop from 'react-router-scroll-top'
-import { clientMutations } from './lib/resolvers';
+import ScrollToTop from "react-router-scroll-top";
+import { clientMutations } from "./lib/resolvers";
 
 import "./styles/index.css";
 import "react-virtualized/styles.css"; // only needs to be imported once
@@ -68,7 +69,6 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-
 const link = ApolloLink.from([authLink, errorLink, httpLink]);
 
 const cache = new InMemoryCache({
@@ -82,32 +82,36 @@ const cache = new InMemoryCache({
   }
 });
 
-cache.writeData({data: {
-  voterPageInfo: {
-    __typename: "VoterPageInfo",
-    nextCursor: null,
-    previousCursor: null,
-    hasNext: null,
-    hasPrevious: null
-}}})
+cache.writeData({
+  data: {
+    voterPageInfo: {
+      __typename: "VoterPageInfo",
+      nextCursor: null,
+      previousCursor: null,
+      hasNext: null,
+      hasPrevious: null
+    }
+  }
+});
 
 const client = new ApolloClient({
   link,
   cache,
   resolvers: {
-    Mutation: clientMutations,
+    Mutation: clientMutations
   }
 });
 
-
 const ApolloApp = () => (
-  <BrowserRouter>
-  <ScrollToTop>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </ScrollToTop>
-  </BrowserRouter>
+  <HttpsRedirect>
+    <BrowserRouter>
+      <ScrollToTop>
+        <ApolloProvider client={client}>
+          <App />
+        </ApolloProvider>
+      </ScrollToTop>
+    </BrowserRouter>
+  </HttpsRedirect>
 );
 
 ReactDOM.render(<ApolloApp />, document.getElementById("root"));
